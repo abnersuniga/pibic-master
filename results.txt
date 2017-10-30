@@ -1,0 +1,30 @@
+WorkingPath: /home/abner/Projetos/pibic-master/datasets/CARSKit.Workspace/
+Your original rating data path: /home/abner/Projetos/pibic-master/datasets/reduzido.csv
+Current working path: /home/abner/Projetos/pibic-master/datasets/CARSKit.Workspace/
+Data transformaton completed (from Compact to Binary format). See new rating file: /home/abner/Projetos/pibic-master/datasets/CARSKit.Workspace/ratings_binary.txt
+Dataset: ...ARSKit.Workspace/ratings_binary.txt
+DataPath: /home/abner/Projetos/pibic-master/datasets/CARSKit.Workspace/ratings_binary.txt
+Rating data set has been successfully loaded.
+
+/*****************************************************************************************
+ *
+ * Dataset: /home/abner/Projetos/pibic-master/datasets/CARSKit.Workspace/ratings_binary.txt
+ * 
+ * Statistics of U-I-C Matrix:
+ * User amount: 237
+ * Item amount: 220
+ * Rate amount: 247
+ * Context dimensions: 2 (latitude, longitude)
+ * Context conditions: 496 (latitude: 248, longitude: 248)
+ * Context situations: 247
+ * Data density: 0,00000770233785849113%
+ * Scale distribution: [1.0 x 247]
+ * Average value of all ratings: 1,000000
+ * Standard deviation of all ratings: 0,000000
+ * Mode of all rating values: 1,000000
+ * Median of all rating values: 1,000000
+ *
+ *****************************************************************************************/
+With Setup: cv -k 2 -p on --rand-seed 1 --test-view all
+Final Results by lars, Pre1: 0Final Results by lars, Pre1: 0,000266, Pre3: 0,000403, Pre5: 0,001267, Pre10: 0,000793, Rec1: 0,000266, Rec3: 0,001208, Rec5: 0,006336, Rec10: 0,007929, F11: 0,000266, F13: 0,000671, F15: 0,002112, F110: 0,001442, AUC: 0,503954, MAP1: 0,000266, MAP3: 0,000691, MAP5: 0,001870, MAP10: 0,002064, NDCG: 0,003439, MRR: 0,002064, carskit.alg.cars.transformation.modeling.LARS@161cd475, Time: '00:00','02:14'
+
