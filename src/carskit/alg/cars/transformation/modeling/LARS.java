@@ -5,57 +5,63 @@ import carskit.alg.baseline.cf.ItemKNNUnary;
 import carskit.alg.baseline.cf.SVDPlusPlus;
 import carskit.alg.baseline.cf.UserKNN;
 import carskit.alg.baseline.ranking.BPR;
-import carskit.alg.cars.transformation.prefiltering.CombinedReduction;
 import carskit.data.structure.SparseMatrix;
 import carskit.generic.Recommender;
 import happy.coding.io.LineConfiger;
 import librec.data.MatrixEntry;
-
 import java.io.PrintWriter;
 
 public class LARS extends Recommender {
 
     private String rec;
 
-    public LARS(SparseMatrix trainMatrix, SparseMatrix testMatrix, int fold) {
+    public LARS(SparseMatrix trainMatrix, SparseMatrix testMatrix, int fold) throws Exception {
         super(trainMatrix, testMatrix, fold);
 
         LARS.algoOptions	= new LineConfiger(cf.getString("recommender"));
-        this.rec 	= CombinedReduction.algoOptions.getString("-traditional");
+        this.rec 	= LARS.algoOptions.getString("-CF");
 
-        //writeMatrix(trainMatrix);
+        // writeMatrix(trainMatrix);
 
-        ItemKNN itemKNNModel = new ItemKNN(trainMatrix, testMatrix, fold);
-        try {
-            itemKNNModel.initModel();
-        } catch (Exception e) {
-            e.printStackTrace();
+        Recommender recUsed = getRecommender(trainMatrix, testMatrix, fold);
+
+        // Model Building
+        recUsed.execute();
+
+        for(MatrixEntry me : testMatrix){
+            double predictRating;
+
+            StringBuilder sb  = new StringBuilder();
+            String userID = rateDao.getUserId(rateDao.getUserIdFromUI(me.row()));
+            String itemID = rateDao.getItemId(rateDao.getItemIdFromUI(me.row())).substring(2);
+            String[] contextIDs = rateDao.getContextId(me.column()).split(",");
+
+            for(String contextID : contextIDs){
+
+                predictRating = recUsed.recommend(Integer.parseInt(userID),Integer.parseInt(itemID),Integer.parseInt(contextID));
+                System.out.println(predictRating);
+            }
+
         }
 
+
     }
+
+
 
     private Recommender getRecommender(SparseMatrix train, SparseMatrix test, int fold){
 
         Recommender recsys = null;
         switch (this.rec) {
             case "itemknn":
-                recsys = new ItemKNN(train,test, fold);
-                break;
-            case "itemknnunary":
-                recsys = new ItemKNNUnary(train, test,fold);
+                recsys = new ItemKNN(train, test, fold);
                 break;
             case "userknn":
                 recsys = new UserKNN(train, test, fold);
                 break;
-            case "bpr":
-                recsys = new BPR(train, test, fold);
-                break;
-            case "svd++":
-                recsys = new SVDPlusPlus(train,test, fold);
-                break;
-
         }
-//		recsys.setItemFrequency(true);
+        System.out.println("Collaborative filtering algorithm " + this.rec.toUpperCase() + "\n");
+
         return recsys;
     }
 
@@ -65,7 +71,6 @@ public class LARS extends Recommender {
             for(MatrixEntry me : matrix){
                 StringBuilder sb  = new StringBuilder();
                 String[] contexts = rateDao.getContextId(me.column()).split(",");
-
 
 
                 sb.append("User: " + rateDao.getUserId(rateDao.getUserIdFromUI(me.row())));
