@@ -1,54 +1,40 @@
-[INFO ] 2017-11-01 09:36:49,439 -- WorkingPath: /home/abner/Projetos/pibic-master/datasets/Teste/CARSKit.Workspace/
-[INFO ] 2017-11-01 09:36:49,469 -- Your original rating data path: /home/abner/Projetos/pibic-master/datasets/Teste/teste0.csv
-[INFO ] 2017-11-01 09:36:49,470 -- Current working path: /home/abner/Projetos/pibic-master/datasets/Teste/CARSKit.Workspace/
-[WARN ] 2017-11-01 09:36:49,476 -- You rating data is in Compact format. CARSKit is working on transformation on the data format...
-[INFO ] 2017-11-01 09:36:49,565 -- Data transformaton completed (from Compact to Binary format). See new rating file: /home/abner/Projetos/pibic-master/datasets/Teste/CARSKit.Workspace/ratings_binary.txt
-[INFO ] 2017-11-01 09:36:49,584 -- Dataset: ...ARSKit.Workspace/ratings_binary.txt
-[INFO ] 2017-11-01 09:36:49,588 -- DataPath: /home/abner/Projetos/pibic-master/datasets/Teste/CARSKit.Workspace/ratings_binary.txt
-[INFO ] 2017-11-01 09:36:49,675 -- Rating data set has been successfully loaded.
-[INFO ] 2017-11-01 09:36:49,688 -- 
+[INFO ] 2017-11-01 16:39:07,354 -- WorkingPath: /home/abner/Projetos/pibic-master/datasets/Teste/CARSKit.Workspace/
+[INFO ] 2017-11-01 16:39:07,393 -- Your original rating data path: /home/abner/Projetos/pibic-master/datasets/Teste/yelp_dataset_igor.csv
+[INFO ] 2017-11-01 16:39:07,393 -- Current working path: /home/abner/Projetos/pibic-master/datasets/Teste/CARSKit.Workspace/
+[WARN ] 2017-11-01 16:39:07,407 -- You rating data is in Compact format. CARSKit is working on transformation on the data format...
+[INFO ] 2017-11-01 16:39:20,281 -- Data transformaton completed (from Compact to Binary format). See new rating file: /home/abner/Projetos/pibic-master/datasets/Teste/CARSKit.Workspace/ratings_binary.txt
+[INFO ] 2017-11-01 16:39:20,302 -- Dataset: ...ARSKit.Workspace/ratings_binary.txt
+[INFO ] 2017-11-01 16:39:20,304 -- DataPath: /home/abner/Projetos/pibic-master/datasets/Teste/CARSKit.Workspace/ratings_binary.txt
+[INFO ] 2017-11-01 16:39:32,436 -- Rating data set has been successfully loaded.
+[INFO ] 2017-11-01 16:39:32,462 -- 
 /***********************************************************************************************
  *
  * Dataset: /home/abner/Projetos/pibic-master/datasets/Teste/CARSKit.Workspace/ratings_binary.txt
  * 
  * Statistics of U-I-C Matrix:
- * User amount: 98
- * Item amount: 95
- * Rate amount: 99
+ * User amount: 6049
+ * Item amount: 5414
+ * Rate amount: 19987
  * Context dimensions: 2 (latitude, longitude)
- * Context conditions: 200 (latitude: 100, longitude: 100)
- * Context situations: 99
- * Data density: 0,00010633727175080557%
- * Scale distribution: [1.0 x 99]
- * Average value of all ratings: 1,000000
- * Standard deviation of all ratings: 0,000000
- * Mode of all rating values: 1,000000
- * Median of all rating values: 1,000000
+ * Context conditions: 10464 (latitude: 5230, longitude: 5234)
+ * Context situations: 5238
+ * Data density: 0,00000000222951484989%
+ * Scale distribution: [2.0 x 1986, 4.0 x 7104, 1.0 x 1271, 5.0 x 5286, 3.0 x 4340]
+ * Average value of all ratings: 3,657828
+ * Standard deviation of all ratings: 1,155124
+ * Mode of all rating values: 4,000000
+ * Median of all rating values: 4,000000
  *
  ***********************************************************************************************/
-[INFO ] 2017-11-01 09:36:49,694 -- With Setup: cv -k 2 -p on --rand-seed 1 --test-view all
-[DEBUG] 2017-11-01 09:36:49,703 -- Fold [1]: training amount: 49, test amount: 50
-[DEBUG] 2017-11-01 09:36:49,716 -- Build item similarity matrix ...
-[DEBUG] 2017-11-01 09:36:49,727 -- ItemKNN fold [1] evaluate test data ... 
-[DEBUG] 2017-11-01 09:36:49,730 -- ItemKNN fold [1] has candidate items: 48
-[DEBUG] 2017-11-01 09:36:49,770 -- ItemKNN fold [1] has writeen item recommendations to /home/abner/Projetos/pibic-master/datasets/Teste/CARSKit.Workspace/ItemKNN-top-10-items fold [1].txt
-[DEBUG] 2017-11-01 09:36:49,777 -- ItemKNN fold [1]: Pre1: 0,000000, Pre3: 0,000000, Pre5: 0,000000, Pre10: 0,000000, Rec1: 0,000000, Rec3: 0,000000, Rec5: 0,000000, Rec10: 0,000000, F11: 0,000000, F13: 0,000000, F15: 0,000000, F110: 0,000000, AUC: 0,500000, MAP1: 0,000000, MAP3: 0,000000, MAP5: 0,000000, MAP10: 0,000000, NDCG: 0,000000, MRR: 0,000000	Time: 00:00, 00:00
-[DEBUG] 2017-11-01 09:36:49,791 -- Fold [2]: training amount: 50, test amount: 49
-[DEBUG] 2017-11-01 09:36:49,792 -- LARS fold [1] evaluate test data ... 
-[DEBUG] 2017-11-01 09:36:49,796 -- LARS fold [1] has candidate items: 48
-[DEBUG] 2017-11-01 09:36:49,796 -- Build item similarity matrix ...
-[DEBUG] 2017-11-01 09:36:49,798 -- ItemKNN fold [2] evaluate test data ... 
-[DEBUG] 2017-11-01 09:36:49,799 -- ItemKNN fold [2] has candidate items: 48
-[DEBUG] 2017-11-01 09:36:49,800 -- LARS fold [1] has writeen item recommendations to /home/abner/Projetos/pibic-master/datasets/Teste/CARSKit.Workspace/LARS-top-10-items fold [1].txt
-[DEBUG] 2017-11-01 09:36:49,801 -- LARS fold [1]: Pre1: 0,000000, Pre3: 0,000000, Pre5: 0,000000, Pre10: 0,000000, Rec1: 0,000000, Rec3: 0,000000, Rec5: 0,000000, Rec10: 0,000000, F11: 0,000000, F13: 0,000000, F15: 0,000000, F110: 0,000000, AUC: 0,500000, MAP1: 0,000000, MAP3: 0,000000, MAP5: 0,000000, MAP10: 0,000000, NDCG: 0,000000, MRR: 0,000000	Time: 00:00, 00:00
-[DEBUG] 2017-11-01 09:36:49,809 -- ItemKNN fold [2] has writeen item recommendations to /home/abner/Projetos/pibic-master/datasets/Teste/CARSKit.Workspace/ItemKNN-top-10-items fold [2].txt
-[DEBUG] 2017-11-01 09:36:49,811 -- ItemKNN fold [2]: Pre1: 0,000000, Pre3: 0,000000, Pre5: 0,000000, Pre10: 0,000000, Rec1: 0,000000, Rec3: 0,000000, Rec5: 0,000000, Rec10: 0,000000, F11: 0,000000, F13: 0,000000, F15: 0,000000, F110: 0,000000, AUC: 0,500000, MAP1: 0,000000, MAP3: 0,000000, MAP5: 0,000000, MAP10: 0,000000, NDCG: 0,000000, MRR: 0,000000	Time: 00:00, 00:00
-[DEBUG] 2017-11-01 09:36:49,820 -- LARS fold [2] evaluate test data ... 
-[DEBUG] 2017-11-01 09:36:49,821 -- LARS fold [2] has candidate items: 48
-[DEBUG] 2017-11-01 09:36:49,825 -- LARS fold [2] has writeen item recommendations to /home/abner/Projetos/pibic-master/datasets/Teste/CARSKit.Workspace/LARS-top-10-items fold [2].txt
-[DEBUG] 2017-11-01 09:36:49,826 -- LARS fold [2]: Pre1: 0,000000, Pre3: 0,000000, Pre5: 0,000000, Pre10: 0,000000, Rec1: 0,000000, Rec3: 0,000000, Rec5: 0,000000, Rec10: 0,000000, F11: 0,000000, F13: 0,000000, F15: 0,000000, F110: 0,000000, AUC: 0,500000, MAP1: 0,000000, MAP3: 0,000000, MAP5: 0,000000, MAP10: 0,000000, NDCG: 0,000000, MRR: 0,000000	Time: 00:00, 00:00
-[DEBUG] 2017-11-01 09:36:49,827 -- Evaluation for fold 1 has written to file: /home/abner/Projetos/pibic-master/datasets/Teste/CARSKit.Workspace/lars -cf itemknn_evalfolds.csv
-[DEBUG] 2017-11-01 09:36:49,828 -- Evaluation for fold 2 has written to file: /home/abner/Projetos/pibic-master/datasets/Teste/CARSKit.Workspace/lars -cf itemknn_evalfolds.csv
-[INFO ] 2017-11-01 09:36:49,830 -- Final Results by lars, Pre1: 0,000000, Pre3: 0,000000, Pre5: 0,000000, Pre10: 0,000000, Rec1: 0,000000, Rec3: 0,000000, Rec5: 0,000000, Rec10: 0,000000, F11: 0,000000, F13: 0,000000, F15: 0,000000, F110: 0,000000, AUC: 0,500000, MAP1: 0,000000, MAP3: 0,000000, MAP5: 0,000000, MAP10: 0,000000, NDCG: 0,000000, MRR: 0,000000, carskit.alg.cars.transformation.modeling.LARS@29444d75, Time: '00:00','00:00'
-
-[DEBUG] 2017-11-01 09:36:49,830 -- Have been collected to file: results_all_2016.txt
+[INFO ] 2017-11-01 16:39:32,464 -- With Setup: cv -k 2 -p on --rand-seed 1 --test-view all
+[DEBUG] 2017-11-01 16:39:32,515 -- Fold [1]: training amount: 9993, test amount: 9994
+[DEBUG] 2017-11-01 16:39:32,562 -- Build item similarity matrix ...
+[DEBUG] 2017-11-01 16:39:35,110 -- ItemKNN fold [1] evaluate test data ... 
+[DEBUG] 2017-11-01 16:39:35,141 -- ItemKNN fold [1] has candidate items: 4506
+[DEBUG] 2017-11-01 16:52:04,183 -- ItemKNN fold [1] evaluates progress: 100 / 5014
+[DEBUG] 2017-11-01 16:52:07,049 -- ItemKNN fold [1] evaluates progress: 100 / 5014
+[DEBUG] 2017-11-01 17:01:47,578 -- ItemKNN fold [1] evaluates progress: 200 / 5014
+[DEBUG] 2017-11-01 17:16:49,162 -- ItemKNN fold [1] evaluates progress: 300 / 5014
+[DEBUG] 2017-11-01 17:16:52,196 -- ItemKNN fold [1] evaluates progress: 300 / 5014
+[DEBUG] 2017-11-01 17:16:55,232 -- ItemKNN fold [1] evaluates progress: 300 / 5014
+[DEBUG] 2017-11-01 17:16:58,273 -- ItemKNN fold [1] evaluates progress: 300 / 5014

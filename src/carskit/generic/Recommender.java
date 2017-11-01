@@ -350,7 +350,7 @@ public abstract class Recommender implements Runnable{
 			HashMap<Integer, HashMultimap<Integer, Integer>> uciList_train=rateDao.getUserCtxList(trainMatrix);
 			HashMultimap<Integer, Integer> cList_train = (uciList_train.containsKey(u))?uciList_train.get(u):HashMultimap.<Integer, Integer>create();
             Set<Integer> ratedItems = (cList_train.containsKey(c))?cList_train.get(c):new HashSet<Integer>();
-			return ranking(u, j, c, ratedItems);
+            return ranking(u, j, c, ratedItems);
 		}
 				
 		return ranking(u, j, c);

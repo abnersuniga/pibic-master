@@ -1,6 +1,7 @@
 package carskit.alg.cars.transformation.modeling;
 
 import carskit.alg.baseline.cf.ItemKNN;
+import carskit.alg.baseline.cf.ItemKNNUnary;
 import carskit.alg.baseline.cf.UserKNN;
 import carskit.data.structure.SparseMatrix;
 import carskit.generic.Recommender;
@@ -13,7 +14,6 @@ public class LARS extends Recommender {
     private String userIDTarget;
     private String userLat;
     private String userLong;
-    private String k;
 
     public LARS(SparseMatrix trainMatrix, SparseMatrix testMatrix, int fold) throws Exception {
         super(trainMatrix, testMatrix, fold);
@@ -23,25 +23,28 @@ public class LARS extends Recommender {
         this.userIDTarget 	= LARS.algoOptions.getString("-user");
         this.userLat 	    = LARS.algoOptions.getString("-lat");
         this.userLong 	    = LARS.algoOptions.getString("-long");
-        this.k	            = LARS.algoOptions.getString("-k");
+
 
         // writeMatrix(trainMatrix);
 
-        Recommender recUsed = getRecommender(trainMatrix, testMatrix, fold);
+        //Recommender recUsed = getRecommender(trainMatrix, testMatrix, fold);
 
+        ItemKNN recUsed = new ItemKNN(trainMatrix, testMatrix, fold);
         // Model Building
         recUsed.execute();
 
-        for(MatrixEntry me : trainMatrix){
+        for(MatrixEntry me : testMatrix){
             double predictRating;
 
-            String userID = rateDao.getUserId(rateDao.getUserIdFromUI(me.row()));
-            String itemID = rateDao.getItemId(rateDao.getItemIdFromUI(me.row())).substring(2);
+
+            int userID = rateDao.getUserIdFromUI(me.row());
+            int itemID = rateDao.getItemIdFromUI(me.row());
+
             String[] contextIDs = rateDao.getContextId(me.column()).split(",");
 
             for(String contextID : contextIDs){
 
-                predictRating = recUsed.recommend(Integer.parseInt(userID),6062,Integer.parseInt(contextID));
+                predictRating = recUsed.predict(userID,itemID);
                 System.out.println("userID: " + userID + "\t\titemID: " + itemID +
                         "\t\tcontextID: " + contextID + "\t\tRating: " +predictRating);
             }
@@ -52,13 +55,15 @@ public class LARS extends Recommender {
     }
 
 
-
     private Recommender getRecommender(SparseMatrix train, SparseMatrix test, int fold){
 
         Recommender recsys = null;
         switch (this.rec) {
             case "itemknn":
                 recsys = new ItemKNN(train, test, fold);
+                break;
+            case "itemknnunary":
+                recsys = new ItemKNNUnary(train, test,fold);
                 break;
             case "userknn":
                 recsys = new UserKNN(train, test, fold);
