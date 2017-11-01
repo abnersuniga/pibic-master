@@ -1,25 +1,29 @@
 package carskit.alg.cars.transformation.modeling;
 
 import carskit.alg.baseline.cf.ItemKNN;
-import carskit.alg.baseline.cf.ItemKNNUnary;
-import carskit.alg.baseline.cf.SVDPlusPlus;
 import carskit.alg.baseline.cf.UserKNN;
-import carskit.alg.baseline.ranking.BPR;
 import carskit.data.structure.SparseMatrix;
 import carskit.generic.Recommender;
 import happy.coding.io.LineConfiger;
 import librec.data.MatrixEntry;
-import java.io.PrintWriter;
 
 public class LARS extends Recommender {
 
     private String rec;
+    private String userIDTarget;
+    private String userLat;
+    private String userLong;
+    private String k;
 
     public LARS(SparseMatrix trainMatrix, SparseMatrix testMatrix, int fold) throws Exception {
         super(trainMatrix, testMatrix, fold);
 
         LARS.algoOptions	= new LineConfiger(cf.getString("recommender"));
-        this.rec 	= LARS.algoOptions.getString("-CF");
+        this.rec 	        = LARS.algoOptions.getString("-cf");
+        this.userIDTarget 	= LARS.algoOptions.getString("-user");
+        this.userLat 	    = LARS.algoOptions.getString("-lat");
+        this.userLong 	    = LARS.algoOptions.getString("-long");
+        this.k	            = LARS.algoOptions.getString("-k");
 
         // writeMatrix(trainMatrix);
 
@@ -28,18 +32,18 @@ public class LARS extends Recommender {
         // Model Building
         recUsed.execute();
 
-        for(MatrixEntry me : testMatrix){
+        for(MatrixEntry me : trainMatrix){
             double predictRating;
 
-            StringBuilder sb  = new StringBuilder();
             String userID = rateDao.getUserId(rateDao.getUserIdFromUI(me.row()));
             String itemID = rateDao.getItemId(rateDao.getItemIdFromUI(me.row())).substring(2);
             String[] contextIDs = rateDao.getContextId(me.column()).split(",");
 
             for(String contextID : contextIDs){
 
-                predictRating = recUsed.recommend(Integer.parseInt(userID),Integer.parseInt(itemID),Integer.parseInt(contextID));
-                System.out.println(predictRating);
+                predictRating = recUsed.recommend(Integer.parseInt(userID),6062,Integer.parseInt(contextID));
+                System.out.println("userID: " + userID + "\t\titemID: " + itemID +
+                        "\t\tcontextID: " + contextID + "\t\tRating: " +predictRating);
             }
 
         }

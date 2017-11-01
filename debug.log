@@ -1,165 +1,54 @@
-[INFO ] 2017-10-25 17:04:53,487 -- WorkingPath: /home/abner/Projetos/pibic-master/datasets/CARSKit.Workspace/
-[INFO ] 2017-10-25 17:04:53,527 -- Your original rating data path: /home/abner/Projetos/pibic-master/datasets/reduzido.csv
-[INFO ] 2017-10-25 17:04:53,527 -- Current working path: /home/abner/Projetos/pibic-master/datasets/CARSKit.Workspace/
-[WARN ] 2017-10-25 17:04:53,546 -- You rating data is in Compact format. CARSKit is working on transformation on the data format...
-[INFO ] 2017-10-25 17:04:54,173 -- Data transformaton completed (from Compact to Binary format). See new rating file: /home/abner/Projetos/pibic-master/datasets/CARSKit.Workspace/ratings_binary.txt
-[INFO ] 2017-10-25 17:04:54,224 -- Dataset: ...ARSKit.Workspace/ratings_binary.txt
-[INFO ] 2017-10-25 17:04:54,241 -- DataPath: /home/abner/Projetos/pibic-master/datasets/CARSKit.Workspace/ratings_binary.txt
-[INFO ] 2017-10-25 17:04:54,574 -- Rating data set has been successfully loaded.
-[INFO ] 2017-10-25 17:04:54,596 -- 
-/*****************************************************************************************
+[INFO ] 2017-11-01 09:36:49,439 -- WorkingPath: /home/abner/Projetos/pibic-master/datasets/Teste/CARSKit.Workspace/
+[INFO ] 2017-11-01 09:36:49,469 -- Your original rating data path: /home/abner/Projetos/pibic-master/datasets/Teste/teste0.csv
+[INFO ] 2017-11-01 09:36:49,470 -- Current working path: /home/abner/Projetos/pibic-master/datasets/Teste/CARSKit.Workspace/
+[WARN ] 2017-11-01 09:36:49,476 -- You rating data is in Compact format. CARSKit is working on transformation on the data format...
+[INFO ] 2017-11-01 09:36:49,565 -- Data transformaton completed (from Compact to Binary format). See new rating file: /home/abner/Projetos/pibic-master/datasets/Teste/CARSKit.Workspace/ratings_binary.txt
+[INFO ] 2017-11-01 09:36:49,584 -- Dataset: ...ARSKit.Workspace/ratings_binary.txt
+[INFO ] 2017-11-01 09:36:49,588 -- DataPath: /home/abner/Projetos/pibic-master/datasets/Teste/CARSKit.Workspace/ratings_binary.txt
+[INFO ] 2017-11-01 09:36:49,675 -- Rating data set has been successfully loaded.
+[INFO ] 2017-11-01 09:36:49,688 -- 
+/***********************************************************************************************
  *
- * Dataset: /home/abner/Projetos/pibic-master/datasets/CARSKit.Workspace/ratings_binary.txt
+ * Dataset: /home/abner/Projetos/pibic-master/datasets/Teste/CARSKit.Workspace/ratings_binary.txt
  * 
  * Statistics of U-I-C Matrix:
- * User amount: 237
- * Item amount: 220
- * Rate amount: 247
+ * User amount: 98
+ * Item amount: 95
+ * Rate amount: 99
  * Context dimensions: 2 (latitude, longitude)
- * Context conditions: 496 (latitude: 248, longitude: 248)
- * Context situations: 247
- * Data density: 0,00000770233785849113%
- * Scale distribution: [1.0 x 247]
+ * Context conditions: 200 (latitude: 100, longitude: 100)
+ * Context situations: 99
+ * Data density: 0,00010633727175080557%
+ * Scale distribution: [1.0 x 99]
  * Average value of all ratings: 1,000000
  * Standard deviation of all ratings: 0,000000
  * Mode of all rating values: 1,000000
  * Median of all rating values: 1,000000
  *
- *****************************************************************************************/
-[INFO ] 2017-10-25 17:04:54,600 -- With Setup: cv -k 2 -p on --rand-seed 1 --test-view all
-[DEBUG] 2017-10-25 17:04:54,619 -- Fold [1]: training amount: 123, test amount: 124
-[DEBUG] 2017-10-25 17:04:54,683 -- Fold [2]: training amount: 124, test amount: 123
-[DEBUG] 2017-10-25 17:04:54,728 -- LARS fold [2] evaluate test data ... 
-[DEBUG] 2017-10-25 17:04:54,743 -- LARS fold [2] has candidate items: 117
-[DEBUG] 2017-10-25 17:04:54,747 -- LARS fold [1] evaluate test data ... 
-[DEBUG] 2017-10-25 17:04:54,753 -- LARS fold [1] has candidate items: 116
-[DEBUG] 2017-10-25 17:04:54,936 -- LARS fold [1] evaluates progress: 100 / 120
-[DEBUG] 2017-10-25 17:04:55,029 -- LARS fold [2] evaluates progress: 200 / 121
-[DEBUG] 2017-10-25 17:04:55,034 -- LARS fold [1] has writeen item recommendations to /home/abner/Projetos/pibic-master/datasets/CARSKit.Workspace/LARS-top-10-items fold [1].txt
-[DEBUG] 2017-10-25 17:04:55,049 -- LARS fold [1]: Pre1: 0,000000, Pre3: 0,000000, Pre5: 0,000000, Pre10: 0,007692, Rec1: 0,000000, Rec3: 0,000000, Rec5: 0,000000, Rec10: 0,076923, F11: 0,000000, F13: 0,000000, F15: 0,000000, F110: 0,013986, AUC: 0,533110, MAP1: 0,000000, MAP3: 0,000000, MAP5: 0,000000, MAP10: 0,008547, NDCG: 0,023156, MRR: 0,008547	Time: 00:00, 00:00
-[DEBUG] 2017-10-25 17:04:55,067 -- LARS fold [2] has writeen item recommendations to /home/abner/Projetos/pibic-master/datasets/CARSKit.Workspace/LARS-top-10-items fold [2].txt
-[DEBUG] 2017-10-25 17:04:55,081 -- LARS fold [2]: Pre1: 0,000000, Pre3: 0,000000, Pre5: 0,000000, Pre10: 0,018750, Rec1: 0,000000, Rec3: 0,000000, Rec5: 0,000000, Rec10: 0,187500, F11: 0,000000, F13: 0,000000, F15: 0,000000, F110: 0,034091, AUC: 0,582435, MAP1: 0,000000, MAP3: 0,000000, MAP5: 0,000000, MAP10: 0,023438, NDCG: 0,059150, MRR: 0,023438	Time: 00:00, 00:00
-[DEBUG] 2017-10-25 17:04:55,082 -- Evaluation for fold 1 has written to file: /home/abner/Projetos/pibic-master/datasets/CARSKit.Workspace/lars_evalfolds.csv
-[DEBUG] 2017-10-25 17:04:55,083 -- Evaluation for fold 2 has written to file: /home/abner/Projetos/pibic-master/datasets/CARSKit.Workspace/lars_evalfolds.csv
-[INFO ] 2017-10-25 17:04:55,085 -- Final Results by lars, Pre1: 0,000000, Pre3: 0,000000, Pre5: 0,000000, Pre10: 0,013221, Rec1: 0,000000, Rec3: 0,000000, Rec5: 0,000000, Rec10: 0,132212, F11: 0,000000, F13: 0,000000, F15: 0,000[DEBUG] 2017-10-25 17:04:59,404 -- LARS fold [2] evaluates progress: 700 / 4121
-[DEBUG] 2017-10-25 17:04:59,425 -- LARS fold [2] evaluates progress: 700 / 4121
-[DEBUG] 2017-10-25 17:04:59,446 -- LARS fold [2] evaluates progress: 700 / 4121
-[DEBUG] 2017-10-25 17:04:59,467 -- LARS fold [2] evaluates progress: 700 / 4121
-[DEBUG] 2017-10-25 17:04:59,488 -- LARS fold [2] evaluates progress: 700 / 4121
-[DEBUG] 2017-10-25 17:05:00,341 -- LARS fold [1] evaluates progress: 700 / 4118
-[DEBUG] 2017-10-25 17:05:04,009 -- LARS fold [2] evaluates progress: 800 / 4121
-[DEBUG] 2017-10-25 17:05:04,024 -- LARS fold [2] evaluates progress: 800 / 4121
-[DEBUG] 2017-10-25 17:05:04,623 -- LARS fold [1] evaluates progress: 800 / 4118
-[DEBUG] 2017-10-25 17:05:04,645 -- LARS fold [1] evaluates progress: 800 / 4118
-[DEBUG] 2017-10-25 17:05:07,845 -- LARS fold [2] evaluates progress: 900 / 4121
-[DEBUG] 2017-10-25 17:05:08,732 -- LARS fold [1] evaluates progress: 900 / 4118
-[DEBUG] 2017-10-25 17:05:11,555 -- LARS fold [2] evaluates progress: 1000 / 4121
-[DEBUG] 2017-10-25 17:05:11,577 -- LARS fold [2] evaluates progress: 1000 / 4121
-[DEBUG] 2017-10-25 17:05:12,565 -- LARS fold [1] evaluates progress: 1000 / 4118
-[DEBUG] 2017-10-25 17:05:12,581 -- LARS fold [1] evaluates progress: 1000 / 4118
-[DEBUG] 2017-10-25 17:05:12,596 -- LARS fold [1] evaluates progress: 1000 / 4118
-[DEBUG] 2017-10-25 17:05:12,615 -- LARS fold [1] evaluates progress: 1000 / 4118
-[DEBUG] 2017-10-25 17:05:15,314 -- LARS fold [2] evaluates progress: 1100 / 4121
-[DEBUG] 2017-10-25 17:05:15,328 -- LARS fold [2] evaluates progress: 1100 / 4121
-[DEBUG] 2017-10-25 17:05:18,778 -- LARS fold [2] evaluates progress: 1200 / 4121
-[DEBUG] 2017-10-25 17:05:18,800 -- LARS fold [2] evaluates progress: 1200 / 4121
-[DEBUG] 2017-10-25 17:05:18,801 -- LARS fold [2] evaluates progress: 1200 / 4121
-[DEBUG] 2017-10-25 17:05:22,265 -- LARS fold [2] evaluates progress: 1300 / 4121
-[DEBUG] 2017-10-25 17:05:23,784 -- LARS fold [1] evaluates progress: 1300 / 4118
-[DEBUG] 2017-10-25 17:05:26,203 -- LARS fold [2] evaluates progress: 1400 / 4121
-[DEBUG] 2017-10-25 17:05:26,203 -- LARS fold [2] evaluates progress: 1400 / 4121
-[DEBUG] 2017-10-25 17:05:29,197 -- LARS fold [2] evaluates progress: 1500 / 4121
-[DEBUG] 2017-10-25 17:05:29,212 -- LARS fold [2] evaluates progress: 1500 / 4121
-[DEBUG] 2017-10-25 17:05:30,844 -- LARS fold [1] evaluates progress: 1500 / 4118
-[DEBUG] 2017-10-25 17:05:33,047 -- LARS fold [2] evaluates progress: 1600 / 4121
-[DEBUG] 2017-10-25 17:05:34,294 -- LARS fold [1] evaluates progress: 1600 / 4118
-[DEBUG] 2017-10-25 17:05:34,315 -- LARS fold [1] evaluates progress: 1600 / 4118
-[DEBUG] 2017-10-25 17:05:36,803 -- LARS fold [2] evaluates progress: 1700 / 4121
-[DEBUG] 2017-10-25 17:05:38,130 -- LARS fold [1] evaluates progress: 1700 / 4118
-[DEBUG] 2017-10-25 17:05:41,281 -- LARS fold [1] evaluates progress: 1800 / 4118
-[DEBUG] 2017-10-25 17:05:43,013 -- LARS fold [2] evaluates progress: 1900 / 4121
-[DEBUG] 2017-10-25 17:05:43,034 -- LARS fold [2] evaluates progress: 1900 / 4121
-[DEBUG] 2017-10-25 17:05:46,217 -- LARS fold [2] evaluates progress: 2000 / 4121
-[DEBUG] 2017-10-25 17:05:48,092 -- LARS fold [1] evaluates progress: 2000 / 4118
-[DEBUG] 2017-10-25 17:05:51,090 -- LARS fold [1] evaluates progress: 2100 / 4118
-[DEBUG] 2017-10-25 17:05:51,091 -- LARS fold [1] evaluates progress: 2100 / 4118
-[DEBUG] 2017-10-25 17:05:53,122 -- LARS fold [2] evaluates progress: 2200 / 4121
-[DEBUG] 2017-10-25 17:05:54,124 -- LARS fold [1] evaluates progress: 2200 / 4118
-[DEBUG] 2017-10-25 17:05:54,148 -- LARS fold [1] evaluates progress: 2200 / 4118
-[DEBUG] 2017-10-25 17:05:56,217 -- LARS fold [2] evaluates progress: 2300 / 4121
-[DEBUG] 2017-10-25 17:05:56,239 -- LARS fold [2] evaluates progress: 2300 / 4121
-[DEBUG] 2017-10-25 17:05:56,257 -- LARS fold [2] evaluates progress: 2300 / 4121
-[DEBUG] 2017-10-25 17:05:56,275 -- LARS fold [2] evaluates progress: 2300 / 4121
-[DEBUG] 2017-10-25 17:05:57,135 -- LARS fold [1] evaluates progress: 2300 / 4118
-[DEBUG] 2017-10-25 17:05:57,158 -- LARS fold [1] evaluates progress: 2300 / 4118
-[DEBUG] 2017-10-25 17:05:57,182 -- LARS fold [1] evaluates progress: 2300 / 4118
-[DEBUG] 2017-10-25 17:06:00,331 -- LARS fold [1] evaluates progress: 2400 / 4118
-[DEBUG] 2017-10-25 17:06:00,353 -- LARS fold [1] evaluates progress: 2400 / 4118
-[DEBUG] 2017-10-25 17:06:02,430 -- LARS fold [2] evaluates progress: 2500 / 4121
-[DEBUG] 2017-10-25 17:06:02,451 -- LARS fold [2] evaluates progress: 2500 / 4121
-[DEBUG] 2017-10-25 17:06:03,053 -- LARS fold [1] evaluates progress: 2500 / 4118
-[DEBUG] 2017-10-25 17:06:03,075 -- LARS fold [1] evaluates progress: 2500 / 4118
-[DEBUG] 2017-10-25 17:06:05,086 -- LARS fold [2] evaluates progress: 2600 / 4121
-[DEBUG] 2017-10-25 17:06:05,103 -- LARS fold [2] evaluates progress: 2600 / 4121
-[DEBUG] 2017-10-25 17:06:07,161 -- LARS fold [1] evaluates progress: 2700 / 4118
-[DEBUG] 2017-10-25 17:06:07,161 -- LARS fold [1] evaluates progress: 2700 / 4118
-[DEBUG] 2017-10-25 17:06:08,434 -- LARS fold [2] evaluates progress: 2800 / 4121
-[DEBUG] 2017-10-25 17:06:09,062 -- LARS fold [1] evaluates progress: 2800 / 4118
-[DEBUG] 2017-10-25 17:06:09,075 -- LARS fold [1] evaluates progress: 2800 / 4118
-[DEBUG] 2017-10-25 17:06:10,136 -- LARS fold [2] evaluates progress: 2900 / 4121
-[DEBUG] 2017-10-25 17:06:10,148 -- LARS fold [2] evaluates progress: 2900 / 4121
-[DEBUG] 2017-10-25 17:06:10,896 -- LARS fold [1] evaluates progress: 2900 / 4118
-[DEBUG] 2017-10-25 17:06:11,781 -- LARS fold [2] evaluates progress: 3000 / 4121
-[DEBUG] 2017-10-25 17:06:11,792 -- LARS fold [2] evaluates progress: 3000 / 4121
-[DEBUG] 2017-10-25 17:06:12,721 -- LARS fold [1] evaluates progress: 3000 / 4118
-[DEBUG] 2017-10-25 17:06:15,272 -- LARS fold [1] evaluates progress: 3100 / 4118
-[DEBUG] 2017-10-25 17:06:15,284 -- LARS fold [1] evaluates progress: 3100 / 4118
-[DEBUG] 2017-10-25 17:06:15,981 -- LARS fold [2] evaluates progress: 3200 / 4121
-[DEBUG] 2017-10-25 17:06:17,622 -- LARS fold [2] evaluates progress: 3300 / 4121
-[DEBUG] 2017-10-25 17:06:17,635 -- LARS fold [2] evaluates progress: 3300 / 4121
-[DEBUG] 2017-10-25 17:06:17,647 -- LARS fold [2] evaluates progress: 3300 / 4121
-[DEBUG] 2017-10-25 17:06:17,659 -- LARS fold [2] evaluates progress: 3300 / 4121
-[DEBUG] 2017-10-25 17:06:19,302 -- LARS fold [2] evaluates progress: 3400 / 4121
-[DEBUG] 2017-10-25 17:06:19,303 -- LARS fold [2] evaluates progress: 3400 / 4121
-[DEBUG] 2017-10-25 17:06:21,963 -- LARS fold [1] evaluates progress: 3500 / 4118
-[DEBUG] 2017-10-25 17:06:21,964 -- LARS fold [1] evaluates progress: 3500 / 4118
-[DEBUG] 2017-10-25 17:06:22,179 -- LARS fold [2] evaluates progress: 3600 / 4121
-[DEBUG] 2017-10-25 17:06:25,050 -- LARS fold [1] evaluates progress: 3700 / 4118
-[DEBUG] 2017-10-25 17:06:25,063 -- LARS fold [1] evaluates progress: 3700 / 4118
-[DEBUG] 2017-10-25 17:06:25,102 -- LARS fold [2] evaluates progress: 3800 / 4121
-[DEBUG] 2017-10-25 17:06:26,194 -- LARS fold [2] evaluates progress: 3900 / 4121
-[DEBUG] 2017-10-25 17:06:27,745 -- LARS fold [2] evaluates progress: 4000 / 4121
-[DEBUG] 2017-10-25 17:06:27,745 -- LARS fold [2] evaluates progress: 4000 / 4121
-[DEBUG] 2017-10-25 17:06:28,929 -- LARS fold [2] evaluates progress: 4100 / 4121
-[DEBUG] 2017-10-25 17:06:28,941 -- LARS fold [2] evaluates progress: 4100 / 4121
-[DEBUG] 2017-10-25 17:06:30,179 -- LARS fold [2] evaluates progress: 4200 / 4121
-[DEBUG] 2017-10-25 17:06:30,179 -- LARS fold [2] evaluates progress: 4200 / 4121
-[DEBUG] 2017-10-25 17:06:31,409 -- LARS fold [2] evaluates progress: 4300 / 4121
-[DEBUG] 2017-10-25 17:06:32,326 -- LARS fold [1] evaluates progress: 4200 / 4118
-[DEBUG] 2017-10-25 17:06:32,653 -- LARS fold [2] evaluates progress: 4400 / 4121
-[DEBUG] 2017-10-25 17:06:33,713 -- LARS fold [1] evaluates progress: 4300 / 4118
-[DEBUG] 2017-10-25 17:06:33,726 -- LARS fold [1] evaluates progress: 4300 / 4118
-[DEBUG] 2017-10-25 17:06:33,823 -- LARS fold [2] evaluates progress: 4500 / 4121
-[DEBUG] 2017-10-25 17:06:33,837 -- LARS fold [2] evaluates progress: 4500 / 4121
-[DEBUG] 2017-10-25 17:06:33,855 -- LARS fold [2] evaluates progress: 4500 / 4121
-[DEBUG] 2017-10-25 17:06:34,927 -- LARS fold [2] evaluates progress: 4600 / 4121
-[DEBUG] 2017-10-25 17:06:34,939 -- LARS fold [2] evaluates progress: 4600 / 4121
-[DEBUG] 2017-10-25 17:06:34,951 -- LARS fold [2] evaluates progress: 4600 / 4121
-[DEBUG] 2017-10-25 17:06:34,963 -- LARS fold [2] evaluates progress: 4600 / 4121
-[DEBUG] 2017-10-25 17:06:35,060 -- LARS fold [1] evaluates progress: 4400 / 4118
-[DEBUG] 2017-10-25 17:06:35,072 -- LARS fold [1] evaluates progress: 4400 / 4118
-[DEBUG] 2017-10-25 17:06:36,005 -- LARS fold [2] evaluates progress: 4700 / 4121
-[DEBUG] 2017-10-25 17:06:37,010 -- LARS fold [2] evaluates progress: 4800 / 4121
-[DEBUG] 2017-10-25 17:06:38,125 -- LARS fold [2] has writeen item recommendations to /home/abner/Projetos/pibic-master/datasets/CARSKit.Workspace/LARS-top-10-items fold [2].txt
-[DEBUG] 2017-10-25 17:06:38,141 -- LARS fold [2]: Pre1: 0,000267, Pre3: 0,000423, Pre5: 0,001529, Pre10: 0,000919, Rec1: 0,000267, Rec3: 0,001270, Rec5: 0,007647, Rec10: 0,009194, F11: 0,000267, F13: 0,000706, F15: 0,002549, F110: 0,001672, AUC: 0,504586, MAP1: 0,000267, MAP3: 0,000735, MAP5: 0,002319, MAP10: 0,002510, NDCG: 0,004096, MRR: 0,002510	Time: 00:00, 02:12
-[DEBUG] 2017-10-25 17:06:38,688 -- LARS fold [1] evaluates progress: 4700 / 4118
-[DEBUG] 2017-10-25 17:06:39,821 -- LARS fold [1] evaluates progress: 4800 / 4118
-[DEBUG] 2017-10-25 17:06:41,130 -- LARS fold [1] evaluates progress: 4900 / 4118
-[DEBUG] 2017-10-25 17:06:41,164 -- LARS fold [1] evaluates progress: 4900 / 4118
-[DEBUG] 2017-10-25 17:06:41,535 -- LARS fold [1] has writeen item recommendations to /home/abner/Projetos/pibic-master/datasets/CARSKit.Workspace/LARS-top-10-items fold [1].txt
-[DEBUG] 2017-10-25 17:06:41,538 -- LARS fold [1]: Pre1: 0,000264, Pre3: 0,000382, Pre5: 0,001005, Pre10: 0,000666, Rec1: 0,000264, Rec3: 0,001145, Rec5: 0,005025, Rec10: 0,006664, F11: 0,000264, F13: 0,000636, F15: 0,001675, F110: 0,001212, AUC: 0,503322, MAP1: 0,000264, MAP3: 0,000646, MAP5: 0,001422, MAP10: 0,001618, NDCG: 0,002781, MRR: 0,001618	Time: 00:00, 02:15
-[DEBUG] 2017-10-25 17:06:41,541 -- Evaluation for fold 1 has written to file: /home/abner/Projetos/pibic-master/datasets/CARSKit.Workspace/lars_evalfolds.csv
-[DEBUG] 2017-10-25 17:06:41,542 -- Evaluation for fold 2 has written to file: /home/abner/Projetos/pibic-master/datasets/CARSKit.Workspace/lars_evalfolds.csv
-[INFO ] 2017-10-25 17:06:41,544 -- Final Results by lars, Pre1: 0,000266, Pre3: 0,000403, Pre5: 0,001267, Pre10: 0,000793, Rec1: 0,000266, Rec3: 0,001208, Rec5: 0,006336, Rec10: 0,007929, F11: 0,000266, F13: 0,000671, F15: 0,002112, F110: 0,001442, AUC: 0,503954, MAP1: 0,000266, MAP3: 0,000691, MAP5: 0,001870, MAP10: 0,002064, NDCG: 0,003439, MRR: 0,002064, carskit.alg.cars.transformation.modeling.LARS@161cd475, Time: '00:00','02:14'
+ ***********************************************************************************************/
+[INFO ] 2017-11-01 09:36:49,694 -- With Setup: cv -k 2 -p on --rand-seed 1 --test-view all
+[DEBUG] 2017-11-01 09:36:49,703 -- Fold [1]: training amount: 49, test amount: 50
+[DEBUG] 2017-11-01 09:36:49,716 -- Build item similarity matrix ...
+[DEBUG] 2017-11-01 09:36:49,727 -- ItemKNN fold [1] evaluate test data ... 
+[DEBUG] 2017-11-01 09:36:49,730 -- ItemKNN fold [1] has candidate items: 48
+[DEBUG] 2017-11-01 09:36:49,770 -- ItemKNN fold [1] has writeen item recommendations to /home/abner/Projetos/pibic-master/datasets/Teste/CARSKit.Workspace/ItemKNN-top-10-items fold [1].txt
+[DEBUG] 2017-11-01 09:36:49,777 -- ItemKNN fold [1]: Pre1: 0,000000, Pre3: 0,000000, Pre5: 0,000000, Pre10: 0,000000, Rec1: 0,000000, Rec3: 0,000000, Rec5: 0,000000, Rec10: 0,000000, F11: 0,000000, F13: 0,000000, F15: 0,000000, F110: 0,000000, AUC: 0,500000, MAP1: 0,000000, MAP3: 0,000000, MAP5: 0,000000, MAP10: 0,000000, NDCG: 0,000000, MRR: 0,000000	Time: 00:00, 00:00
+[DEBUG] 2017-11-01 09:36:49,791 -- Fold [2]: training amount: 50, test amount: 49
+[DEBUG] 2017-11-01 09:36:49,792 -- LARS fold [1] evaluate test data ... 
+[DEBUG] 2017-11-01 09:36:49,796 -- LARS fold [1] has candidate items: 48
+[DEBUG] 2017-11-01 09:36:49,796 -- Build item similarity matrix ...
+[DEBUG] 2017-11-01 09:36:49,798 -- ItemKNN fold [2] evaluate test data ... 
+[DEBUG] 2017-11-01 09:36:49,799 -- ItemKNN fold [2] has candidate items: 48
+[DEBUG] 2017-11-01 09:36:49,800 -- LARS fold [1] has writeen item recommendations to /home/abner/Projetos/pibic-master/datasets/Teste/CARSKit.Workspace/LARS-top-10-items fold [1].txt
+[DEBUG] 2017-11-01 09:36:49,801 -- LARS fold [1]: Pre1: 0,000000, Pre3: 0,000000, Pre5: 0,000000, Pre10: 0,000000, Rec1: 0,000000, Rec3: 0,000000, Rec5: 0,000000, Rec10: 0,000000, F11: 0,000000, F13: 0,000000, F15: 0,000000, F110: 0,000000, AUC: 0,500000, MAP1: 0,000000, MAP3: 0,000000, MAP5: 0,000000, MAP10: 0,000000, NDCG: 0,000000, MRR: 0,000000	Time: 00:00, 00:00
+[DEBUG] 2017-11-01 09:36:49,809 -- ItemKNN fold [2] has writeen item recommendations to /home/abner/Projetos/pibic-master/datasets/Teste/CARSKit.Workspace/ItemKNN-top-10-items fold [2].txt
+[DEBUG] 2017-11-01 09:36:49,811 -- ItemKNN fold [2]: Pre1: 0,000000, Pre3: 0,000000, Pre5: 0,000000, Pre10: 0,000000, Rec1: 0,000000, Rec3: 0,000000, Rec5: 0,000000, Rec10: 0,000000, F11: 0,000000, F13: 0,000000, F15: 0,000000, F110: 0,000000, AUC: 0,500000, MAP1: 0,000000, MAP3: 0,000000, MAP5: 0,000000, MAP10: 0,000000, NDCG: 0,000000, MRR: 0,000000	Time: 00:00, 00:00
+[DEBUG] 2017-11-01 09:36:49,820 -- LARS fold [2] evaluate test data ... 
+[DEBUG] 2017-11-01 09:36:49,821 -- LARS fold [2] has candidate items: 48
+[DEBUG] 2017-11-01 09:36:49,825 -- LARS fold [2] has writeen item recommendations to /home/abner/Projetos/pibic-master/datasets/Teste/CARSKit.Workspace/LARS-top-10-items fold [2].txt
+[DEBUG] 2017-11-01 09:36:49,826 -- LARS fold [2]: Pre1: 0,000000, Pre3: 0,000000, Pre5: 0,000000, Pre10: 0,000000, Rec1: 0,000000, Rec3: 0,000000, Rec5: 0,000000, Rec10: 0,000000, F11: 0,000000, F13: 0,000000, F15: 0,000000, F110: 0,000000, AUC: 0,500000, MAP1: 0,000000, MAP3: 0,000000, MAP5: 0,000000, MAP10: 0,000000, NDCG: 0,000000, MRR: 0,000000	Time: 00:00, 00:00
+[DEBUG] 2017-11-01 09:36:49,827 -- Evaluation for fold 1 has written to file: /home/abner/Projetos/pibic-master/datasets/Teste/CARSKit.Workspace/lars -cf itemknn_evalfolds.csv
+[DEBUG] 2017-11-01 09:36:49,828 -- Evaluation for fold 2 has written to file: /home/abner/Projetos/pibic-master/datasets/Teste/CARSKit.Workspace/lars -cf itemknn_evalfolds.csv
+[INFO ] 2017-11-01 09:36:49,830 -- Final Results by lars, Pre1: 0,000000, Pre3: 0,000000, Pre5: 0,000000, Pre10: 0,000000, Rec1: 0,000000, Rec3: 0,000000, Rec5: 0,000000, Rec10: 0,000000, F11: 0,000000, F13: 0,000000, F15: 0,000000, F110: 0,000000, AUC: 0,500000, MAP1: 0,000000, MAP3: 0,000000, MAP5: 0,000000, MAP10: 0,000000, NDCG: 0,000000, MRR: 0,000000, carskit.alg.cars.transformation.modeling.LARS@29444d75, Time: '00:00','00:00'
 
-[DEBUG] 2017-10-25 17:06:41,544 -- Have been collected to file: results_all_2016.txt
+[DEBUG] 2017-11-01 09:36:49,830 -- Have been collected to file: results_all_2016.txt
