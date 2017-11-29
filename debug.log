@@ -1,398 +1,62 @@
-[INFO ] 2017-11-01 16:39:07,354 -- WorkingPath: /home/abner/Projetos/pibic-master/datasets/Teste/CARSKit.Workspace/
-[INFO ] 2017-11-01 16:39:07,393 -- Your original rating data path: /home/abner/Projetos/pibic-master/datasets/Teste/yelp_dataset_igor.csv
-[INFO ] 2017-11-01 16:39:07,393 -- Current working path: /home/abner/Projetos/pibic-master/datasets/Teste/CARSKit.Workspace/
-[WARN ] 2017-11-01 16:39:07,407 -- You rating data is in Compact format. CARSKit is working on transformation on the data format...
-[INFO ] 2017-11-01 16:39:20,281 -- Data transformaton completed (from Compact to Binary format). See new rating file: /home/abner/Projetos/pibic-master/datasets/Teste/CARSKit.Workspace/ratings_binary.txt
-[INFO ] 2017-11-01 16:39:20,302 -- Dataset: ...ARSKit.Workspace/ratings_binary.txt
-[INFO ] 2017-11-01 16:39:20,304 -- DataPath: /home/abner/Projetos/pibic-master/datasets/Teste/CARSKit.Workspace/ratings_binary.txt
-[INFO ] 2017-11-01 16:39:32,436 -- Rating data set has been successfully loaded.
-[INFO ] 2017-11-01 16:39:32,462 -- 
-/***********************************************************************************************
+[INFO ] 2017-11-29 10:20:24,994 -- WorkingPath: C:\Projeto\pibic-master\datasets\yelp\CARSKit.Workspace\
+[INFO ] 2017-11-29 10:20:25,046 -- Your original rating data path: C:\Projeto\pibic-master\datasets\yelp\yelp_dataset_reduzido.csv
+[INFO ] 2017-11-29 10:20:25,046 -- Current working path: C:\Projeto\pibic-master\datasets\yelp\CARSKit.Workspace\
+[WARN ] 2017-11-29 10:20:25,052 -- You rating data is in Compact format. CARSKit is working on transformation on the data format...
+[INFO ] 2017-11-29 10:20:25,326 -- Data transformaton completed (from Compact to Binary format). See new rating file: C:\Projeto\pibic-master\datasets\yelp\CARSKit.Workspace\ratings_binary.txt
+[INFO ] 2017-11-29 10:20:25,366 -- Dataset: ...ARSKit.Workspace\ratings_binary.txt
+[INFO ] 2017-11-29 10:20:25,405 -- DataPath: C:\Projeto\pibic-master\datasets\yelp\CARSKit.Workspace\ratings_binary.txt
+[INFO ] 2017-11-29 10:20:26,048 -- Rating data set has been successfully loaded.
+[INFO ] 2017-11-29 10:20:26,065 -- 
+/************************************************************************************
  *
- * Dataset: /home/abner/Projetos/pibic-master/datasets/Teste/CARSKit.Workspace/ratings_binary.txt
+ * Dataset: C:\Projeto\pibic-master\datasets\yelp\CARSKit.Workspace\ratings_binary.txt
  * 
  * Statistics of U-I-C Matrix:
- * User amount: 6049
- * Item amount: 5414
- * Rate amount: 19987
+ * User amount: 460
+ * Item amount: 458
+ * Rate amount: 499
  * Context dimensions: 2 (latitude, longitude)
- * Context conditions: 10464 (latitude: 5230, longitude: 5234)
- * Context situations: 5238
- * Data density: 0,00000000222951484989%
- * Scale distribution: [2.0 x 1986, 4.0 x 7104, 1.0 x 1271, 5.0 x 5286, 3.0 x 4340]
- * Average value of all ratings: 3,657828
- * Standard deviation of all ratings: 1,155124
+ * Context conditions: 914 (latitude: 457, longitude: 457)
+ * Context situations: 456
+ * Data density: 0,00000113408298803673%
+ * Scale distribution: [2.0 x 49, 4.0 x 162, 1.0 x 28, 5.0 x 148, 3.0 x 112]
+ * Average value of all ratings: 3,707415
+ * Standard deviation of all ratings: 1,154657
  * Mode of all rating values: 4,000000
  * Median of all rating values: 4,000000
  *
- ***********************************************************************************************/
-[INFO ] 2017-11-01 16:39:32,464 -- With Setup: cv -k 2 -p on --rand-seed 1 --test-view all
-[DEBUG] 2017-11-01 16:39:32,515 -- Fold [1]: training amount: 9993, test amount: 9994
-[DEBUG] 2017-11-01 16:39:32,562 -- Build item similarity matrix ...
-[DEBUG] 2017-11-01 16:39:35,110 -- ItemKNN fold [1] evaluate test data ... 
-[DEBUG] 2017-11-01 16:39:35,141 -- ItemKNN fold [1] has candidate items: 4506
-[DEBUG] 2017-11-01 16:52:04,183 -- ItemKNN fold [1] evaluates progress: 100 / 5014
-[DEBUG] 2017-11-01 16:52:07,049 -- ItemKNN fold [1] evaluates progress: 100 / 5014
-[DEBUG] 2017-11-01 17:01:47,578 -- ItemKNN fold [1] evaluates progress: 200 / 5014
-[DEBUG] 2017-11-01 17:16:49,162 -- ItemKNN fold [1] evaluates progress: 300 / 5014
-[DEBUG] 2017-11-01 17:16:52,196 -- ItemKNN fold [1] evaluates progress: 300 / 5014
-[DEBUG] 2017-11-01 17:16:55,232 -- ItemKNN fold [1] evaluates progress: 300 / 5014
-[DEBUG] 2017-11-01 17:16:58,273 -- ItemKNN fold [1] evaluates progress: 300 / 5014
-[DEBUG] 2017-11-01 17:29:00,341 -- ItemKNN fold [1] evaluates progress: 400 / 5014
-[DEBUG] 2017-11-01 17:29:03,668 -- ItemKNN fold [1] evaluates progress: 400 / 5014
-[DEBUG] 2017-11-01 17:29:07,326 -- ItemKNN fold [1] evaluates progress: 400 / 5014
-[DEBUG] 2017-11-01 17:29:07,327 -- ItemKNN fold [1] evaluates progress: 400 / 5014
-[DEBUG] 2017-11-01 17:38:44,990 -- ItemKNN fold [1] evaluates progress: 500 / 5014
-[DEBUG] 2017-11-01 17:50:11,321 -- ItemKNN fold [1] evaluates progress: 600 / 5014
-[DEBUG] 2017-11-01 18:00:33,331 -- ItemKNN fold [1] evaluates progress: 700 / 5014
-[DEBUG] 2017-11-01 18:00:36,375 -- ItemKNN fold [1] evaluates progress: 700 / 5014
-[DEBUG] 2017-11-01 18:10:10,454 -- ItemKNN fold [1] evaluates progress: 800 / 5014
-[DEBUG] 2017-11-01 18:10:10,454 -- ItemKNN fold [1] evaluates progress: 800 / 5014
-[DEBUG] 2017-11-01 18:18:08,570 -- ItemKNN fold [1] evaluates progress: 900 / 5014
-[DEBUG] 2017-11-01 18:26:45,746 -- ItemKNN fold [1] evaluates progress: 1000 / 5014
-[DEBUG] 2017-11-01 18:33:58,799 -- ItemKNN fold [1] evaluates progress: 1100 / 5014
-[DEBUG] 2017-11-01 18:33:58,799 -- ItemKNN fold [1] evaluates progress: 1100 / 5014
-[DEBUG] 2017-11-01 18:59:01,978 -- ItemKNN fold [1] evaluates progress: 1400 / 5014
-[DEBUG] 2017-11-01 18:59:04,996 -- ItemKNN fold [1] evaluates progress: 1400 / 5014
-[DEBUG] 2017-11-01 18:59:08,028 -- ItemKNN fold [1] evaluates progress: 1400 / 5014
-[DEBUG] 2017-11-01 19:14:28,483 -- ItemKNN fold [1] evaluates progress: 1600 / 5014
-[DEBUG] 2017-11-01 19:20:30,552 -- ItemKNN fold [1] evaluates progress: 1700 / 5014
-[DEBUG] 2017-11-01 19:26:32,890 -- ItemKNN fold [1] evaluates progress: 1800 / 5014
-[DEBUG] 2017-11-01 19:34:07,648 -- ItemKNN fold [1] evaluates progress: 1900 / 5014
-[DEBUG] 2017-11-01 19:40:48,140 -- ItemKNN fold [1] evaluates progress: 2000 / 5014
-[DEBUG] 2017-11-01 19:40:51,157 -- ItemKNN fold [1] evaluates progress: 2000 / 5014
-[DEBUG] 2017-11-01 19:47:46,551 -- ItemKNN fold [1] evaluates progress: 2100 / 5014
-[DEBUG] 2017-11-01 19:53:53,804 -- ItemKNN fold [1] evaluates progress: 2200 / 5014
-[DEBUG] 2017-11-01 19:53:56,793 -- ItemKNN fold [1] evaluates progress: 2200 / 5014
-[DEBUG] 2017-11-01 20:00:22,179 -- ItemKNN fold [1] evaluates progress: 2300 / 5014
-[DEBUG] 2017-11-01 20:00:25,204 -- ItemKNN fold [1] evaluates progress: 2300 / 5014
-[DEBUG] 2017-11-01 20:00:28,237 -- ItemKNN fold [1] evaluates progress: 2300 / 5014
-[DEBUG] 2017-11-01 20:00:31,276 -- ItemKNN fold [1] evaluates progress: 2300 / 5014
-[DEBUG] 2017-11-01 20:06:59,896 -- ItemKNN fold [1] evaluates progress: 2400 / 5014
-[DEBUG] 2017-11-01 20:06:59,897 -- ItemKNN fold [1] evaluates progress: 2400 / 5014
-[DEBUG] 2017-11-01 20:12:49,088 -- ItemKNN fold [1] evaluates progress: 2500 / 5014
-[DEBUG] 2017-11-01 20:12:52,105 -- ItemKNN fold [1] evaluates progress: 2500 / 5014
-[DEBUG] 2017-11-01 20:18:56,535 -- ItemKNN fold [1] evaluates progress: 2600 / 5014
-[DEBUG] 2017-11-01 20:37:51,588 -- ItemKNN fold [1] evaluates progress: 2900 / 5014
-[DEBUG] 2017-11-01 20:43:49,505 -- ItemKNN fold [1] evaluates progress: 3000 / 5014
-[DEBUG] 2017-11-01 20:43:52,537 -- ItemKNN fold [1] evaluates progress: 3000 / 5014
-[DEBUG] 2017-11-01 20:43:55,781 -- ItemKNN fold [1] evaluates progress: 3000 / 5014
-[DEBUG] 2017-11-01 21:00:18,306 -- ItemKNN fold [1] evaluates progress: 3300 / 5014
-[DEBUG] 2017-11-01 21:12:12,011 -- ItemKNN fold [1] evaluates progress: 3500 / 5014
-[DEBUG] 2017-11-01 21:12:15,017 -- ItemKNN fold [1] evaluates progress: 3500 / 5014
-[DEBUG] 2017-11-01 21:17:47,720 -- ItemKNN fold [1] evaluates progress: 3600 / 5014
-[DEBUG] 2017-11-01 21:23:17,305 -- ItemKNN fold [1] evaluates progress: 3700 / 5014
-[DEBUG] 2017-11-01 21:29:08,355 -- ItemKNN fold [1] evaluates progress: 3800 / 5014
-[DEBUG] 2017-11-01 21:29:11,335 -- ItemKNN fold [1] evaluates progress: 3800 / 5014
-[DEBUG] 2017-11-01 21:35:05,145 -- ItemKNN fold [1] evaluates progress: 3900 / 5014
-[DEBUG] 2017-11-01 21:35:05,145 -- ItemKNN fold [1] evaluates progress: 3900 / 5014
-[DEBUG] 2017-11-01 21:40:07,789 -- ItemKNN fold [1] evaluates progress: 4000 / 5014
-[DEBUG] 2017-11-01 21:45:19,633 -- ItemKNN fold [1] evaluates progress: 4100 / 5014
-[DEBUG] 2017-11-01 21:45:22,641 -- ItemKNN fold [1] evaluates progress: 4100 / 5014
-[DEBUG] 2017-11-01 21:50:31,429 -- ItemKNN fold [1] evaluates progress: 4200 / 5014
-[DEBUG] 2017-11-01 21:55:19,115 -- ItemKNN fold [1] evaluates progress: 4300 / 5014
-[DEBUG] 2017-11-01 21:55:22,109 -- ItemKNN fold [1] evaluates progress: 4300 / 5014
-[DEBUG] 2017-11-01 22:00:15,721 -- ItemKNN fold [1] evaluates progress: 4400 / 5014
-[DEBUG] 2017-11-01 22:00:18,712 -- ItemKNN fold [1] evaluates progress: 4400 / 5014
-[DEBUG] 2017-11-01 22:00:21,671 -- ItemKNN fold [1] evaluates progress: 4400 / 5014
-[DEBUG] 2017-11-01 22:05:15,372 -- ItemKNN fold [1] evaluates progress: 4500 / 5014
-[DEBUG] 2017-11-01 22:10:02,805 -- ItemKNN fold [1] evaluates progress: 4600 / 5014
-[DEBUG] 2017-11-01 22:14:53,586 -- ItemKNN fold [1] evaluates progress: 4700 / 5014
-[DEBUG] 2017-11-01 22:14:53,587 -- ItemKNN fold [1] evaluates progress: 4700 / 5014
-[DEBUG] 2017-11-01 22:20:29,245 -- ItemKNN fold [1] evaluates progress: 4800 / 5014
-[DEBUG] 2017-11-01 22:24:52,804 -- ItemKNN fold [1] evaluates progress: 4900 / 5014
-[DEBUG] 2017-11-01 22:24:55,785 -- ItemKNN fold [1] evaluates progress: 4900 / 5014
-[DEBUG] 2017-11-01 22:24:58,801 -- ItemKNN fold [1] evaluates progress: 4900 / 5014
-[DEBUG] 2017-11-01 22:25:01,818 -- ItemKNN fold [1] evaluates progress: 4900 / 5014
-[DEBUG] 2017-11-01 22:25:04,797 -- ItemKNN fold [1] evaluates progress: 4900 / 5014
-[DEBUG] 2017-11-01 22:29:55,520 -- ItemKNN fold [1] evaluates progress: 5000 / 5014
-[DEBUG] 2017-11-01 22:29:58,529 -- ItemKNN fold [1] evaluates progress: 5000 / 5014
-[DEBUG] 2017-11-01 22:34:58,297 -- ItemKNN fold [1] evaluates progress: 5100 / 5014
-[DEBUG] 2017-11-01 22:35:01,327 -- ItemKNN fold [1] evaluates progress: 5100 / 5014
-[DEBUG] 2017-11-01 22:35:04,349 -- ItemKNN fold [1] evaluates progress: 5100 / 5014
-[DEBUG] 2017-11-01 22:39:33,835 -- ItemKNN fold [1] evaluates progress: 5200 / 5014
-[DEBUG] 2017-11-01 22:39:36,834 -- ItemKNN fold [1] evaluates progress: 5200 / 5014
-[DEBUG] 2017-11-01 22:44:06,385 -- ItemKNN fold [1] evaluates progress: 5300 / 5014
-[DEBUG] 2017-11-01 22:48:33,084 -- ItemKNN fold [1] evaluates progress: 5400 / 5014
-[DEBUG] 2017-11-01 22:48:36,149 -- ItemKNN fold [1] evaluates progress: 5400 / 5014
-[DEBUG] 2017-11-01 22:48:39,159 -- ItemKNN fold [1] evaluates progress: 5400 / 5014
-[DEBUG] 2017-11-01 22:53:21,361 -- ItemKNN fold [1] evaluates progress: 5500 / 5014
-[DEBUG] 2017-11-01 22:58:00,047 -- ItemKNN fold [1] evaluates progress: 5600 / 5014
-[DEBUG] 2017-11-01 23:11:29,401 -- ItemKNN fold [1] evaluates progress: 5900 / 5014
-[DEBUG] 2017-11-01 23:15:44,010 -- ItemKNN fold [1] evaluates progress: 6000 / 5014
-[DEBUG] 2017-11-01 23:15:47,021 -- ItemKNN fold [1] evaluates progress: 6000 / 5014
-[DEBUG] 2017-11-01 23:17:41,040 -- ItemKNN fold [1] has writeen item recommendations to /home/abner/Projetos/pibic-master/datasets/Teste/CARSKit.Workspace/ItemKNN-top-10-items fold [1].txt
-[DEBUG] 2017-11-01 23:17:41,054 -- ItemKNN fold [1]: Pre1: 0,001958, Pre3: 0,002044, Pre5: 0,001939, Pre10: 0,001847, Rec1: 0,001958, Rec3: 0,006132, Rec5: 0,009694, Rec10: 0,018472, F11: 0,001958, F13: 0,003402, F15: 0,003231, F110: 0,003358, AUC: 0,509219, MAP1: 0,001958, MAP3: 0,003691, MAP5: 0,004506, MAP10: 0,005740, NDCG: 0,008683, MRR: 0,005740	Time: 00:02, 06:38:05
-[DEBUG] 2017-11-01 23:17:54,476 -- Fold [2]: training amount: 9994, test amount: 9993
-[DEBUG] 2017-11-01 23:17:54,517 -- Build item similarity matrix ...
-[DEBUG] 2017-11-01 23:17:54,547 -- LARS fold [1] evaluate test data ... 
-[DEBUG] 2017-11-01 23:17:54,623 -- LARS fold [1] has candidate items: 4506
-[DEBUG] 2017-11-01 23:17:57,819 -- ItemKNN fold [2] evaluate test data ... 
-[DEBUG] 2017-11-01 23:17:57,850 -- ItemKNN fold [2] has candidate items: 4512
-[DEBUG] 2017-11-01 23:18:02,249 -- LARS fold [1] evaluates progress: 100 / 5014
-[DEBUG] 2017-11-01 23:18:02,279 -- LARS fold [1] evaluates progress: 100 / 5014
-[DEBUG] 2017-11-01 23:18:08,468 -- LARS fold [1] evaluates progress: 200 / 5014
-[DEBUG] 2017-11-01 23:18:16,653 -- LARS fold [1] evaluates progress: 300 / 5014
-[DEBUG] 2017-11-01 23:18:16,688 -- LARS fold [1] evaluates progress: 300 / 5014
-[DEBUG] 2017-11-01 23:18:16,720 -- LARS fold [1] evaluates progress: 300 / 5014
-[DEBUG] 2017-11-01 23:18:16,752 -- LARS fold [1] evaluates progress: 300 / 5014
-[DEBUG] 2017-11-01 23:18:23,858 -- LARS fold [1] evaluates progress: 400 / 5014
-[DEBUG] 2017-11-01 23:18:23,884 -- LARS fold [1] evaluates progress: 400 / 5014
-[DEBUG] 2017-11-01 23:18:23,908 -- LARS fold [1] evaluates progress: 400 / 5014
-[DEBUG] 2017-11-01 23:18:23,908 -- LARS fold [1] evaluates progress: 400 / 5014
-[DEBUG] 2017-11-01 23:18:29,132 -- LARS fold [1] evaluates progress: 500 / 5014
-[DEBUG] 2017-11-01 23:18:36,236 -- LARS fold [1] evaluates progress: 600 / 5014
-[DEBUG] 2017-11-01 23:18:42,125 -- LARS fold [1] evaluates progress: 700 / 5014
-[DEBUG] 2017-11-01 23:18:42,159 -- LARS fold [1] evaluates progress: 700 / 5014
-[DEBUG] 2017-11-01 23:18:47,733 -- LARS fold [1] evaluates progress: 800 / 5014
-[DEBUG] 2017-11-01 23:18:47,733 -- LARS fold [1] evaluates progress: 800 / 5014
-[DEBUG] 2017-11-01 23:18:51,788 -- LARS fold [1] evaluates progress: 900 / 5014
-[DEBUG] 2017-11-01 23:18:56,762 -- LARS fold [1] evaluates progress: 1000 / 5014
-[DEBUG] 2017-11-01 23:19:00,428 -- LARS fold [1] evaluates progress: 1100 / 5014
-[DEBUG] 2017-11-01 23:19:00,429 -- LARS fold [1] evaluates progress: 1100 / 5014
-[DEBUG] 2017-11-01 23:19:12,015 -- LARS fold [1] evaluates progress: 1400 / 5014
-[DEBUG] 2017-11-01 23:19:12,036 -- LARS fold [1] evaluates progress: 1400 / 5014
-[DEBUG] 2017-11-01 23:19:12,056 -- LARS fold [1] evaluates progress: 1400 / 5014
-[DEBUG] 2017-11-01 23:19:18,359 -- LARS fold [1] evaluates progress: 1600 / 5014
-[DEBUG] 2017-11-01 23:19:20,836 -- LARS fold [1] evaluates progress: 1700 / 5014
-[DEBUG] 2017-11-01 23:19:23,286 -- LARS fold [1] evaluates progress: 1800 / 5014
-[DEBUG] 2017-11-01 23:19:26,391 -- LARS fold [1] evaluates progress: 1900 / 5014
-[DEBUG] 2017-11-01 23:19:29,144 -- LARS fold [1] evaluates progress: 2000 / 5014
-[DEBUG] 2017-11-01 23:19:29,164 -- LARS fold [1] evaluates progress: 2000 / 5014
-[DEBUG] 2017-11-01 23:19:31,997 -- LARS fold [1] evaluates progress: 2100 / 5014
-[DEBUG] 2017-11-01 23:19:34,500 -- LARS fold [1] evaluates progress: 2200 / 5014
-[DEBUG] 2017-11-01 23:19:34,520 -- LARS fold [1] evaluates progress: 2200 / 5014
-[DEBUG] 2017-11-01 23:19:37,146 -- LARS fold [1] evaluates progress: 2300 / 5014
-[DEBUG] 2017-11-01 23:19:37,167 -- LARS fold [1] evaluates progress: 2300 / 5014
-[DEBUG] 2017-11-01 23:19:37,187 -- LARS fold [1] evaluates progress: 2300 / 5014
-[DEBUG] 2017-11-01 23:19:37,207 -- LARS fold [1] evaluates progress: 2300 / 5014
-[DEBUG] 2017-11-01 23:19:39,886 -- LARS fold [1] evaluates progress: 2400 / 5014
-[DEBUG] 2017-11-01 23:19:39,886 -- LARS fold [1] evaluates progress: 2400 / 5014
-[DEBUG] 2017-11-01 23:19:42,284 -- LARS fold [1] evaluates progress: 2500 / 5014
-[DEBUG] 2017-11-01 23:19:42,305 -- LARS fold [1] evaluates progress: 2500 / 5014
-[DEBUG] 2017-11-01 23:19:44,812 -- LARS fold [1] evaluates progress: 2600 / 5014
-[DEBUG] 2017-11-01 23:19:52,557 -- LARS fold [1] evaluates progress: 2900 / 5014
-[DEBUG] 2017-11-01 23:19:55,017 -- LARS fold [1] evaluates progress: 3000 / 5014
-[DEBUG] 2017-11-01 23:19:55,040 -- LARS fold [1] evaluates progress: 3000 / 5014
-[DEBUG] 2017-11-01 23:19:55,063 -- LARS fold [1] evaluates progress: 3000 / 5014
-[DEBUG] 2017-11-01 23:20:01,832 -- LARS fold [1] evaluates progress: 3300 / 5014
-[DEBUG] 2017-11-01 23:20:06,699 -- LARS fold [1] evaluates progress: 3500 / 5014
-[DEBUG] 2017-11-01 23:20:06,720 -- LARS fold [1] evaluates progress: 3500 / 5014
-[DEBUG] 2017-11-01 23:20:08,999 -- LARS fold [1] evaluates progress: 3600 / 5014
-[DEBUG] 2017-11-01 23:20:11,314 -- LARS fold [1] evaluates progress: 3700 / 5014
-[DEBUG] 2017-11-01 23:20:13,740 -- LARS fold [1] evaluates progress: 3800 / 5014
-[DEBUG] 2017-11-01 23:20:13,761 -- LARS fold [1] evaluates progress: 3800 / 5014
-[DEBUG] 2017-11-01 23:20:16,228 -- LARS fold [1] evaluates progress: 3900 / 5014
-[DEBUG] 2017-11-01 23:20:16,228 -- LARS fold [1] evaluates progress: 3900 / 5014
-[DEBUG] 2017-11-01 23:20:18,323 -- LARS fold [1] evaluates progress: 4000 / 5014
-[DEBUG] 2017-11-01 23:20:20,463 -- LARS fold [1] evaluates progress: 4100 / 5014
-[DEBUG] 2017-11-01 23:20:20,484 -- LARS fold [1] evaluates progress: 4100 / 5014
-[DEBUG] 2017-11-01 23:20:22,586 -- LARS fold [1] evaluates progress: 4200 / 5014
-[DEBUG] 2017-11-01 23:20:24,559 -- LARS fold [1] evaluates progress: 4300 / 5014
-[DEBUG] 2017-11-01 23:20:24,579 -- LARS fold [1] evaluates progress: 4300 / 5014
-[DEBUG] 2017-11-01 23:20:26,603 -- LARS fold [1] evaluates progress: 4400 / 5014
-[DEBUG] 2017-11-01 23:20:26,624 -- LARS fold [1] evaluates progress: 4400 / 5014
-[DEBUG] 2017-11-01 23:20:26,644 -- LARS fold [1] evaluates progress: 4400 / 5014
-[DEBUG] 2017-11-01 23:20:28,659 -- LARS fold [1] evaluates progress: 4500 / 5014
-[DEBUG] 2017-11-01 23:20:30,634 -- LARS fold [1] evaluates progress: 4600 / 5014
-[DEBUG] 2017-11-01 23:20:32,655 -- LARS fold [1] evaluates progress: 4700 / 5014
-[DEBUG] 2017-11-01 23:20:32,656 -- LARS fold [1] evaluates progress: 4700 / 5014
-[DEBUG] 2017-11-01 23:20:34,966 -- LARS fold [1] evaluates progress: 4800 / 5014
-[DEBUG] 2017-11-01 23:20:36,790 -- LARS fold [1] evaluates progress: 4900 / 5014
-[DEBUG] 2017-11-01 23:20:36,810 -- LARS fold [1] evaluates progress: 4900 / 5014
-[DEBUG] 2017-11-01 23:20:36,831 -- LARS fold [1] evaluates progress: 4900 / 5014
-[DEBUG] 2017-11-01 23:20:36,851 -- LARS fold [1] evaluates progress: 4900 / 5014
-[DEBUG] 2017-11-01 23:20:36,872 -- LARS fold [1] evaluates progress: 4900 / 5014
-[DEBUG] 2017-11-01 23:20:38,870 -- LARS fold [1] evaluates progress: 5000 / 5014
-[DEBUG] 2017-11-01 23:20:38,890 -- LARS fold [1] evaluates progress: 5000 / 5014
-[DEBUG] 2017-11-01 23:20:40,957 -- LARS fold [1] evaluates progress: 5100 / 5014
-[DEBUG] 2017-11-01 23:20:40,977 -- LARS fold [1] evaluates progress: 5100 / 5014
-[DEBUG] 2017-11-01 23:20:40,997 -- LARS fold [1] evaluates progress: 5100 / 5014
-[DEBUG] 2017-11-01 23:20:43,000 -- LARS fold [1] evaluates progress: 5200 / 5014
-[DEBUG] 2017-11-01 23:20:43,020 -- LARS fold [1] evaluates progress: 5200 / 5014
-[DEBUG] 2017-11-01 23:20:44,921 -- LARS fold [1] evaluates progress: 5300 / 5014
-[DEBUG] 2017-11-01 23:20:46,733 -- LARS fold [1] evaluates progress: 5400 / 5014
-[DEBUG] 2017-11-01 23:20:46,753 -- LARS fold [1] evaluates progress: 5400 / 5014
-[DEBUG] 2017-11-01 23:20:46,775 -- LARS fold [1] evaluates progress: 5400 / 5014
-[DEBUG] 2017-11-01 23:20:48,703 -- LARS fold [1] evaluates progress: 5500 / 5014
-[DEBUG] 2017-11-01 23:20:50,620 -- LARS fold [1] evaluates progress: 5600 / 5014
-[DEBUG] 2017-11-01 23:20:56,136 -- LARS fold [1] evaluates progress: 5900 / 5014
-[DEBUG] 2017-11-01 23:20:57,901 -- LARS fold [1] evaluates progress: 6000 / 5014
-[DEBUG] 2017-11-01 23:20:57,927 -- LARS fold [1] evaluates progress: 6000 / 5014
-[DEBUG] 2017-11-01 23:20:58,722 -- LARS fold [1] has writeen item recommendations to /home/abner/Projetos/pibic-master/datasets/Teste/CARSKit.Workspace/LARS-top-10-items fold [1].txt
-[DEBUG] 2017-11-01 23:20:58,727 -- LARS fold [1]: Pre1: 0,000640, Pre3: 0,000213, Pre5: 0,000232, Pre10: 0,000566, Rec1: 0,000640, Rec3: 0,000640, Rec5: 0,001161, Rec10: 0,005661, F11: 0,000640, F13: 0,000356, F15: 0,000387, F110: 0,001029, AUC: 0,502824, MAP1: 0,000640, MAP3: 0,000640, MAP5: 0,000767, MAP10: 0,001436, NDCG: 0,002386, MRR: 0,001436	Time: 00:00, 03:04
-[DEBUG] 2017-11-01 23:43:35,780 -- ItemKNN fold [2] evaluates progress: 200 / 4943
-[DEBUG] 2017-11-02 00:02:12,489 -- ItemKNN fold [2] evaluates progress: 300 / 4943
-[DEBUG] 2017-11-02 00:02:12,489 -- ItemKNN fold [2] evaluates progress: 300 / 4943
-[DEBUG] 2017-11-02 00:02:12,489 -- ItemKNN fold [2] evaluates progress: 300 / 4943
-[DEBUG] 2017-11-02 00:02:15,836 -- ItemKNN fold [2] evaluates progress: 300 / 4943
-[DEBUG] 2017-11-02 00:14:17,882 -- ItemKNN fold [2] evaluates progress: 400 / 4943
-[DEBUG] 2017-11-02 00:14:21,271 -- ItemKNN fold [2] evaluates progress: 400 / 4943
-[DEBUG] 2017-11-02 00:26:53,953 -- ItemKNN fold [2] evaluates progress: 500 / 4943
-[DEBUG] 2017-11-02 00:39:39,952 -- ItemKNN fold [2] evaluates progress: 600 / 4943
-[DEBUG] 2017-11-02 00:50:44,666 -- ItemKNN fold [2] evaluates progress: 700 / 4943
-[DEBUG] 2017-11-02 00:59:58,014 -- ItemKNN fold [2] evaluates progress: 800 / 4943
-[DEBUG] 2017-11-02 00:59:58,014 -- ItemKNN fold [2] evaluates progress: 800 / 4943
-[DEBUG] 2017-11-02 01:00:01,393 -- ItemKNN fold [2] evaluates progress: 800 / 4943
-[DEBUG] 2017-11-02 01:08:51,172 -- ItemKNN fold [2] evaluates progress: 900 / 4943
-[DEBUG] 2017-11-02 01:17:20,741 -- ItemKNN fold [2] evaluates progress: 1000 / 4943
-[DEBUG] 2017-11-02 01:24:22,584 -- ItemKNN fold [2] evaluates progress: 1100 / 4943
-[DEBUG] 2017-11-02 01:24:25,964 -- ItemKNN fold [2] evaluates progress: 1100 / 4943
-[DEBUG] 2017-11-02 01:24:29,317 -- ItemKNN fold [2] evaluates progress: 1100 / 4943
-[DEBUG] 2017-11-02 01:33:22,432 -- ItemKNN fold [2] evaluates progress: 1200 / 4943
-[DEBUG] 2017-11-02 01:33:25,810 -- ItemKNN fold [2] evaluates progress: 1200 / 4943
-[DEBUG] 2017-11-02 01:44:06,648 -- ItemKNN fold [2] evaluates progress: 1300 / 4943
-[DEBUG] 2017-11-02 01:44:10,006 -- ItemKNN fold [2] evaluates progress: 1300 / 4943
-[DEBUG] 2017-11-02 02:03:31,105 -- ItemKNN fold [2] evaluates progress: 1500 / 4943
-[DEBUG] 2017-11-02 02:03:34,507 -- ItemKNN fold [2] evaluates progress: 1500 / 4943
-[DEBUG] 2017-11-02 02:12:48,079 -- ItemKNN fold [2] evaluates progress: 1600 / 4943
-[DEBUG] 2017-11-02 02:20:43,704 -- ItemKNN fold [2] evaluates progress: 1700 / 4943
-[DEBUG] 2017-11-02 02:28:32,658 -- ItemKNN fold [2] evaluates progress: 1800 / 4943
-[DEBUG] 2017-11-02 02:37:05,604 -- ItemKNN fold [2] evaluates progress: 1900 / 4943
-[DEBUG] 2017-11-02 02:51:42,964 -- ItemKNN fold [2] evaluates progress: 2100 / 4943
-[DEBUG] 2017-11-02 03:06:10,196 -- ItemKNN fold [2] evaluates progress: 2300 / 4943
-[DEBUG] 2017-11-02 03:06:10,196 -- ItemKNN fold [2] evaluates progress: 2300 / 4943
-[DEBUG] 2017-11-02 03:06:13,570 -- ItemKNN fold [2] evaluates progress: 2300 / 4943
-[DEBUG] 2017-11-02 03:06:16,955 -- ItemKNN fold [2] evaluates progress: 2300 / 4943
-[DEBUG] 2017-11-02 03:13:32,801 -- ItemKNN fold [2] evaluates progress: 2400 / 4943
-[DEBUG] 2017-11-02 03:28:03,459 -- ItemKNN fold [2] evaluates progress: 2600 / 4943
-[DEBUG] 2017-11-02 03:35:02,063 -- ItemKNN fold [2] evaluates progress: 2700 / 4943
-[DEBUG] 2017-11-02 03:35:02,063 -- ItemKNN fold [2] evaluates progress: 2700 / 4943
-[DEBUG] 2017-11-02 03:35:05,438 -- ItemKNN fold [2] evaluates progress: 2700 / 4943
-[DEBUG] 2017-11-02 03:42:38,052 -- ItemKNN fold [2] evaluates progress: 2800 / 4943
-[DEBUG] 2017-11-02 03:42:41,419 -- ItemKNN fold [2] evaluates progress: 2800 / 4943
-[DEBUG] 2017-11-02 03:48:39,257 -- ItemKNN fold [2] evaluates progress: 2900 / 4943
-[DEBUG] 2017-11-02 03:48:42,641 -- ItemKNN fold [2] evaluates progress: 2900 / 4943
-[DEBUG] 2017-11-02 03:56:21,727 -- ItemKNN fold [2] evaluates progress: 3000 / 4943
-[DEBUG] 2017-11-02 03:56:25,087 -- ItemKNN fold [2] evaluates progress: 3000 / 4943
-[DEBUG] 2017-11-02 03:56:28,454 -- ItemKNN fold [2] evaluates progress: 3000 / 4943
-[DEBUG] 2017-11-02 03:56:31,830 -- ItemKNN fold [2] evaluates progress: 3000 / 4943
-[DEBUG] 2017-11-02 03:56:35,246 -- ItemKNN fold [2] evaluates progress: 3000 / 4943
-[DEBUG] 2017-11-02 03:56:38,615 -- ItemKNN fold [2] evaluates progress: 3000 / 4943
-[DEBUG] 2017-11-02 03:56:42,043 -- ItemKNN fold [2] evaluates progress: 3000 / 4943
-[DEBUG] 2017-11-02 04:03:00,153 -- ItemKNN fold [2] evaluates progress: 3100 / 4943
-[DEBUG] 2017-11-02 04:03:03,533 -- ItemKNN fold [2] evaluates progress: 3100 / 4943
-[DEBUG] 2017-11-02 04:09:24,801 -- ItemKNN fold [2] evaluates progress: 3200 / 4943
-[DEBUG] 2017-11-02 04:09:24,801 -- ItemKNN fold [2] evaluates progress: 3200 / 4943
-[DEBUG] 2017-11-02 04:14:43,315 -- ItemKNN fold [2] evaluates progress: 3300 / 4943
-[DEBUG] 2017-11-02 04:21:04,953 -- ItemKNN fold [2] evaluates progress: 3400 / 4943
-[DEBUG] 2017-11-02 04:21:04,953 -- ItemKNN fold [2] evaluates progress: 3400 / 4943
-[DEBUG] 2017-11-02 04:33:00,591 -- ItemKNN fold [2] evaluates progress: 3600 / 4943
-[DEBUG] 2017-11-02 04:38:54,921 -- ItemKNN fold [2] evaluates progress: 3700 / 4943
-[DEBUG] 2017-11-02 04:44:22,603 -- ItemKNN fold [2] evaluates progress: 3800 / 4943
-[DEBUG] 2017-11-02 04:56:24,885 -- ItemKNN fold [2] evaluates progress: 4000 / 4943
-[DEBUG] 2017-11-02 04:56:28,280 -- ItemKNN fold [2] evaluates progress: 4000 / 4943
-[DEBUG] 2017-11-02 04:56:31,654 -- ItemKNN fold [2] evaluates progress: 4000 / 4943
-[DEBUG] 2017-11-02 04:56:35,033 -- ItemKNN fold [2] evaluates progress: 4000 / 4943
-[DEBUG] 2017-11-02 05:07:40,121 -- ItemKNN fold [2] evaluates progress: 4200 / 4943
-[DEBUG] 2017-11-02 05:07:40,121 -- ItemKNN fold [2] evaluates progress: 4200 / 4943
-[DEBUG] 2017-11-02 05:25:46,922 -- ItemKNN fold [2] evaluates progress: 4500 / 4943
-[DEBUG] 2017-11-02 05:30:47,232 -- ItemKNN fold [2] evaluates progress: 4600 / 4943
-[DEBUG] 2017-11-02 05:41:21,779 -- ItemKNN fold [2] evaluates progress: 4800 / 4943
-[DEBUG] 2017-11-02 05:51:49,116 -- ItemKNN fold [2] evaluates progress: 5000 / 4943
-[DEBUG] 2017-11-02 05:51:52,470 -- ItemKNN fold [2] evaluates progress: 5000 / 4943
-[DEBUG] 2017-11-02 05:51:52,471 -- ItemKNN fold [2] evaluates progress: 5000 / 4943
-[DEBUG] 2017-11-02 05:57:06,252 -- ItemKNN fold [2] evaluates progress: 5100 / 4943
-[DEBUG] 2017-11-02 06:07:13,292 -- ItemKNN fold [2] evaluates progress: 5300 / 4943
-[DEBUG] 2017-11-02 06:12:40,557 -- ItemKNN fold [2] evaluates progress: 5400 / 4943
-[DEBUG] 2017-11-02 06:18:28,161 -- ItemKNN fold [2] evaluates progress: 5500 / 4943
-[DEBUG] 2017-11-02 06:23:45,569 -- ItemKNN fold [2] evaluates progress: 5600 / 4943
-[DEBUG] 2017-11-02 06:28:52,882 -- ItemKNN fold [2] evaluates progress: 5700 / 4943
-[DEBUG] 2017-11-02 06:28:56,262 -- ItemKNN fold [2] evaluates progress: 5700 / 4943
-[DEBUG] 2017-11-02 06:33:56,548 -- ItemKNN fold [2] evaluates progress: 5800 / 4943
-[DEBUG] 2017-11-02 06:33:59,927 -- ItemKNN fold [2] evaluates progress: 5800 / 4943
-[DEBUG] 2017-11-02 06:34:03,312 -- ItemKNN fold [2] evaluates progress: 5800 / 4943
-[DEBUG] 2017-11-02 06:38:05,960 -- ItemKNN fold [2] evaluates progress: 5900 / 4943
-[DEBUG] 2017-11-02 06:45:28,038 -- ItemKNN fold [2] has writeen item recommendations to /home/abner/Projetos/pibic-master/datasets/Teste/CARSKit.Workspace/ItemKNN-top-10-items fold [2].txt
-[DEBUG] 2017-11-02 06:45:28,042 -- ItemKNN fold [2]: Pre1: 0,001761, Pre3: 0,002051, Pre5: 0,002220, Pre10: 0,001961, Rec1: 0,001761, Rec3: 0,006152, Rec5: 0,011098, Rec10: 0,019611, F11: 0,001761, F13: 0,003418, F15: 0,003699, F110: 0,003566, AUC: 0,509787, MAP1: 0,001761, MAP3: 0,003566, MAP5: 0,004638, MAP10: 0,005736, NDCG: 0,008926, MRR: 0,005736	Time: 00:03, 07:27:30
-[DEBUG] 2017-11-02 06:45:42,758 -- LARS fold [2] evaluate test data ... 
-[DEBUG] 2017-11-02 06:45:42,795 -- LARS fold [2] has candidate items: 4512
-[DEBUG] 2017-11-02 06:45:51,563 -- LARS fold [2] evaluates progress: 200 / 4943
-[DEBUG] 2017-11-02 06:45:58,342 -- LARS fold [2] evaluates progress: 300 / 4943
-[DEBUG] 2017-11-02 06:45:58,342 -- LARS fold [2] evaluates progress: 300 / 4943
-[DEBUG] 2017-11-02 06:45:58,342 -- LARS fold [2] evaluates progress: 300 / 4943
-[DEBUG] 2017-11-02 06:45:58,362 -- LARS fold [2] evaluates progress: 300 / 4943
-[DEBUG] 2017-11-02 06:46:02,752 -- LARS fold [2] evaluates progress: 400 / 4943
-[DEBUG] 2017-11-02 06:46:02,772 -- LARS fold [2] evaluates progress: 400 / 4943
-[DEBUG] 2017-11-02 06:46:07,606 -- LARS fold [2] evaluates progress: 500 / 4943
-[DEBUG] 2017-11-02 06:46:12,765 -- LARS fold [2] evaluates progress: 600 / 4943
-[DEBUG] 2017-11-02 06:46:17,155 -- LARS fold [2] evaluates progress: 700 / 4943
-[DEBUG] 2017-11-02 06:46:20,801 -- LARS fold [2] evaluates progress: 800 / 4943
-[DEBUG] 2017-11-02 06:46:20,801 -- LARS fold [2] evaluates progress: 800 / 4943
-[DEBUG] 2017-11-02 06:46:20,823 -- LARS fold [2] evaluates progress: 800 / 4943
-[DEBUG] 2017-11-02 06:46:24,156 -- LARS fold [2] evaluates progress: 900 / 4943
-[DEBUG] 2017-11-02 06:46:27,373 -- LARS fold [2] evaluates progress: 1000 / 4943
-[DEBUG] 2017-11-02 06:46:30,018 -- LARS fold [2] evaluates progress: 1100 / 4943
-[DEBUG] 2017-11-02 06:46:30,038 -- LARS fold [2] evaluates progress: 1100 / 4943
-[DEBUG] 2017-11-02 06:46:30,059 -- LARS fold [2] evaluates progress: 1100 / 4943
-[DEBUG] 2017-11-02 06:46:33,373 -- LARS fold [2] evaluates progress: 1200 / 4943
-[DEBUG] 2017-11-02 06:46:33,394 -- LARS fold [2] evaluates progress: 1200 / 4943
-[DEBUG] 2017-11-02 06:46:37,390 -- LARS fold [2] evaluates progress: 1300 / 4943
-[DEBUG] 2017-11-02 06:46:37,411 -- LARS fold [2] evaluates progress: 1300 / 4943
-[DEBUG] 2017-11-02 06:46:44,520 -- LARS fold [2] evaluates progress: 1500 / 4943
-[DEBUG] 2017-11-02 06:46:44,540 -- LARS fold [2] evaluates progress: 1500 / 4943
-[DEBUG] 2017-11-02 06:46:47,878 -- LARS fold [2] evaluates progress: 1600 / 4943
-[DEBUG] 2017-11-02 06:46:50,743 -- LARS fold [2] evaluates progress: 1700 / 4943
-[DEBUG] 2017-11-02 06:46:53,601 -- LARS fold [2] evaluates progress: 1800 / 4943
-[DEBUG] 2017-11-02 06:46:56,682 -- LARS fold [2] evaluates progress: 1900 / 4943
-[DEBUG] 2017-11-02 06:47:01,986 -- LARS fold [2] evaluates progress: 2100 / 4943
-[DEBUG] 2017-11-02 06:47:07,217 -- LARS fold [2] evaluates progress: 2300 / 4943
-[DEBUG] 2017-11-02 06:47:07,217 -- LARS fold [2] evaluates progress: 2300 / 4943
-[DEBUG] 2017-11-02 06:47:07,237 -- LARS fold [2] evaluates progress: 2300 / 4943
-[DEBUG] 2017-11-02 06:47:07,259 -- LARS fold [2] evaluates progress: 2300 / 4943
-[DEBUG] 2017-11-02 06:47:09,903 -- LARS fold [2] evaluates progress: 2400 / 4943
-[DEBUG] 2017-11-02 06:47:15,213 -- LARS fold [2] evaluates progress: 2600 / 4943
-[DEBUG] 2017-11-02 06:47:17,777 -- LARS fold [2] evaluates progress: 2700 / 4943
-[DEBUG] 2017-11-02 06:47:17,777 -- LARS fold [2] evaluates progress: 2700 / 4943
-[DEBUG] 2017-11-02 06:47:17,797 -- LARS fold [2] evaluates progress: 2700 / 4943
-[DEBUG] 2017-11-02 06:47:20,501 -- LARS fold [2] evaluates progress: 2800 / 4943
-[DEBUG] 2017-11-02 06:47:20,521 -- LARS fold [2] evaluates progress: 2800 / 4943
-[DEBUG] 2017-11-02 06:47:22,698 -- LARS fold [2] evaluates progress: 2900 / 4943
-[DEBUG] 2017-11-02 06:47:22,718 -- LARS fold [2] evaluates progress: 2900 / 4943
-[DEBUG] 2017-11-02 06:47:25,489 -- LARS fold [2] evaluates progress: 3000 / 4943
-[DEBUG] 2017-11-02 06:47:25,510 -- LARS fold [2] evaluates progress: 3000 / 4943
-[DEBUG] 2017-11-02 06:47:25,530 -- LARS fold [2] evaluates progress: 3000 / 4943
-[DEBUG] 2017-11-02 06:47:25,550 -- LARS fold [2] evaluates progress: 3000 / 4943
-[DEBUG] 2017-11-02 06:47:25,570 -- LARS fold [2] evaluates progress: 3000 / 4943
-[DEBUG] 2017-11-02 06:47:25,589 -- LARS fold [2] evaluates progress: 3000 / 4943
-[DEBUG] 2017-11-02 06:47:25,609 -- LARS fold [2] evaluates progress: 3000 / 4943
-[DEBUG] 2017-11-02 06:47:27,891 -- LARS fold [2] evaluates progress: 3100 / 4943
-[DEBUG] 2017-11-02 06:47:27,911 -- LARS fold [2] evaluates progress: 3100 / 4943
-[DEBUG] 2017-11-02 06:47:30,197 -- LARS fold [2] evaluates progress: 3200 / 4943
-[DEBUG] 2017-11-02 06:47:30,197 -- LARS fold [2] evaluates progress: 3200 / 4943
-[DEBUG] 2017-11-02 06:47:32,110 -- LARS fold [2] evaluates progress: 3300 / 4943
-[DEBUG] 2017-11-02 06:47:34,388 -- LARS fold [2] evaluates progress: 3400 / 4943
-[DEBUG] 2017-11-02 06:47:34,388 -- LARS fold [2] evaluates progress: 3400 / 4943
-[DEBUG] 2017-11-02 06:47:38,685 -- LARS fold [2] evaluates progress: 3600 / 4943
-[DEBUG] 2017-11-02 06:47:40,836 -- LARS fold [2] evaluates progress: 3700 / 4943
-[DEBUG] 2017-11-02 06:47:42,794 -- LARS fold [2] evaluates progress: 3800 / 4943
-[DEBUG] 2017-11-02 06:47:47,144 -- LARS fold [2] evaluates progress: 4000 / 4943
-[DEBUG] 2017-11-02 06:47:47,165 -- LARS fold [2] evaluates progress: 4000 / 4943
-[DEBUG] 2017-11-02 06:47:47,185 -- LARS fold [2] evaluates progress: 4000 / 4943
-[DEBUG] 2017-11-02 06:47:47,205 -- LARS fold [2] evaluates progress: 4000 / 4943
-[DEBUG] 2017-11-02 06:47:51,232 -- LARS fold [2] evaluates progress: 4200 / 4943
-[DEBUG] 2017-11-02 06:47:51,232 -- LARS fold [2] evaluates progress: 4200 / 4943
-[DEBUG] 2017-11-02 06:47:57,781 -- LARS fold [2] evaluates progress: 4500 / 4943
-[DEBUG] 2017-11-02 06:47:59,609 -- LARS fold [2] evaluates progress: 4600 / 4943
-[DEBUG] 2017-11-02 06:48:03,479 -- LARS fold [2] evaluates progress: 4800 / 4943
-[DEBUG] 2017-11-02 06:48:07,250 -- LARS fold [2] evaluates progress: 5000 / 4943
-[DEBUG] 2017-11-02 06:48:07,270 -- LARS fold [2] evaluates progress: 5000 / 4943
-[DEBUG] 2017-11-02 06:48:07,270 -- LARS fold [2] evaluates progress: 5000 / 4943
-[DEBUG] 2017-11-02 06:48:09,153 -- LARS fold [2] evaluates progress: 5100 / 4943
-[DEBUG] 2017-11-02 06:48:12,853 -- LARS fold [2] evaluates progress: 5300 / 4943
-[DEBUG] 2017-11-02 06:48:14,829 -- LARS fold [2] evaluates progress: 5400 / 4943
-[DEBUG] 2017-11-02 06:48:16,927 -- LARS fold [2] evaluates progress: 5500 / 4943
-[DEBUG] 2017-11-02 06:48:18,820 -- LARS fold [2] evaluates progress: 5600 / 4943
-[DEBUG] 2017-11-02 06:48:20,684 -- LARS fold [2] evaluates progress: 5700 / 4943
-[DEBUG] 2017-11-02 06:48:20,704 -- LARS fold [2] evaluates progress: 5700 / 4943
-[DEBUG] 2017-11-02 06:48:22,518 -- LARS fold [2] evaluates progress: 5800 / 4943
-[DEBUG] 2017-11-02 06:48:22,538 -- LARS fold [2] evaluates progress: 5800 / 4943
-[DEBUG] 2017-11-02 06:48:22,558 -- LARS fold [2] evaluates progress: 5800 / 4943
-[DEBUG] 2017-11-02 06:48:24,026 -- LARS fold [2] evaluates progress: 5900 / 4943
-[DEBUG] 2017-11-02 06:48:26,710 -- LARS fold [2] has writeen item recommendations to /home/abner/Projetos/pibic-master/datasets/Teste/CARSKit.Workspace/LARS-top-10-items fold [2].txt
-[DEBUG] 2017-11-02 06:48:26,714 -- LARS fold [2]: Pre1: 0,000288, Pre3: 0,000164, Pre5: 0,000915, Pre10: 0,000702, Rec1: 0,000288, Rec3: 0,000492, Rec5: 0,004575, Rec10: 0,007025, F11: 0,000288, F13: 0,000273, F15: 0,001525, F110: 0,001277, AUC: 0,503505, MAP1: 0,000288, MAP3: 0,000364, MAP5: 0,001212, MAP10: 0,001504, NDCG: 0,002761, MRR: 0,001504	Time: 00:00, 02:43
-[DEBUG] 2017-11-02 06:48:26,717 -- Evaluation for fold 1 has written to file: /home/abner/Projetos/pibic-master/datasets/Teste/CARSKit.Workspace/lars -cf itemknn_evalfolds.csv
-[DEBUG] 2017-11-02 06:48:26,717 -- Evaluation for fold 2 has written to file: /home/abner/Projetos/pibic-master/datasets/Teste/CARSKit.Workspace/lars -cf itemknn_evalfolds.csv
-[INFO ] 2017-11-02 06:48:26,719 -- Final Results by lars, Pre1: 0,000464, Pre3: 0,000189, Pre5: 0,000574, Pre10: 0,000634, Rec1: 0,000464, Rec3: 0,000566, Rec5: 0,002868, Rec10: 0,006343, F11: 0,000464, F13: 0,000315, F15: 0,000956, F110: 0,001153, AUC: 0,503164, MAP1: 0,000464, MAP3: 0,000502, MAP5: 0,000990, MAP10: 0,001470, NDCG: 0,002574, MRR: 0,001470, carskit.alg.cars.transformation.modeling.LARS@44e81672, Time: '00:00','02:54'
+ ************************************************************************************/
+[INFO ] 2017-11-29 10:20:26,069 -- With Setup: cv -k 2 -p on --rand-seed 1 --test-view all
+[DEBUG] 2017-11-29 10:20:26,088 -- Fold [1]: training amount: 249, test amount: 250
+[DEBUG] 2017-11-29 10:20:26,111 -- Build item similarity matrix ...
+[DEBUG] 2017-11-29 10:20:26,145 -- ItemKNN fold [1] evaluate test data ... 
+[DEBUG] 2017-11-29 10:20:26,150 -- ItemKNN fold [1] has candidate items: 237
+[DEBUG] 2017-11-29 10:20:26,683 -- ItemKNN fold [1] evaluates progress: 200 / 239
+[DEBUG] 2017-11-29 10:20:26,872 -- ItemKNN fold [1] has writeen item recommendations to C:\Projeto\pibic-master\datasets\yelp\CARSKit.Workspace\ItemKNN-top-10-items fold [1].txt
+[DEBUG] 2017-11-29 10:20:26,877 -- ItemKNN fold [1]: Pre1: 0,000000, Pre3: 0,015873, Pre5: 0,028571, Pre10: 0,014286, Rec1: 0,000000, Rec3: 0,047619, Rec5: 0,142857, Rec10: 0,142857, F11: 0,000000, F13: 0,026455, F15: 0,047619, F110: 0,025974, AUC: 0,569613, MAP1: 0,000000, MAP3: 0,023810, MAP5: 0,042857, MAP10: 0,042857, NDCG: 0,066887, MRR: 0,042857	Time: 00:00, 00:00
+[DEBUG] 2017-11-29 10:20:26,885 -- Fold [2]: training amount: 250, test amount: 249
+[DEBUG] 2017-11-29 10:20:26,888 -- Build item similarity matrix ...
+[DEBUG] 2017-11-29 10:20:26,888 -- LARS fold [1] evaluate test data ... 
+[DEBUG] 2017-11-29 10:20:26,899 -- ItemKNN fold [2] evaluate test data ... 
+[DEBUG] 2017-11-29 10:20:26,949 -- LARS fold [1] has candidate items: 237
+[DEBUG] 2017-11-29 10:20:26,950 -- ItemKNN fold [2] has candidate items: 236
+[DEBUG] 2017-11-29 10:20:26,996 -- ItemKNN fold [2] evaluates progress: 100 / 241
+[DEBUG] 2017-11-29 10:20:27,018 -- LARS fold [1] evaluates progress: 200 / 239
+[DEBUG] 2017-11-29 10:20:27,070 -- LARS fold [1] has writeen item recommendations to C:\Projeto\pibic-master\datasets\yelp\CARSKit.Workspace\LARS-top-10-items fold [1].txt
+[DEBUG] 2017-11-29 10:20:27,071 -- LARS fold [1]: Pre1: 0,000000, Pre3: 0,015873, Pre5: 0,028571, Pre10: 0,014286, Rec1: 0,000000, Rec3: 0,047619, Rec5: 0,142857, Rec10: 0,142857, F11: 0,000000, F13: 0,026455, F15: 0,047619, F110: 0,025974, AUC: 0,569613, MAP1: 0,000000, MAP3: 0,023810, MAP5: 0,042857, MAP10: 0,042857, NDCG: 0,066887, MRR: 0,042857	Time: 00:00, 00:00
+[DEBUG] 2017-11-29 10:20:27,152 -- ItemKNN fold [2] evaluates progress: 300 / 241
+[DEBUG] 2017-11-29 10:20:27,313 -- ItemKNN fold [2] evaluates progress: 400 / 241
+[DEBUG] 2017-11-29 10:20:27,331 -- ItemKNN fold [2] has writeen item recommendations to C:\Projeto\pibic-master\datasets\yelp\CARSKit.Workspace\ItemKNN-top-10-items fold [2].txt
+[DEBUG] 2017-11-29 10:20:27,333 -- ItemKNN fold [2]: Pre1: 0,055556, Pre3: 0,037037, Pre5: 0,022222, Pre10: 0,011111, Rec1: 0,055556, Rec3: 0,111111, Rec5: 0,111111, Rec10: 0,111111, F11: 0,055556, F13: 0,061728, F15: 0,037037, F110: 0,020202, AUC: 0,555083, MAP1: 0,055556, MAP3: 0,074074, MAP5: 0,074074, MAP10: 0,074074, NDCG: 0,083333, MRR: 0,074074	Time: 00:00, 00:00
+[DEBUG] 2017-11-29 10:20:27,340 -- LARS fold [2] evaluate test data ... 
+[DEBUG] 2017-11-29 10:20:27,381 -- LARS fold [2] has candidate items: 236
+[DEBUG] 2017-11-29 10:20:27,388 -- LARS fold [2] evaluates progress: 100 / 241
+[DEBUG] 2017-11-29 10:20:27,413 -- LARS fold [2] evaluates progress: 300 / 241
+[DEBUG] 2017-11-29 10:20:27,447 -- LARS fold [2] evaluates progress: 400 / 241
+[DEBUG] 2017-11-29 10:20:27,455 -- LARS fold [2] has writeen item recommendations to C:\Projeto\pibic-master\datasets\yelp\CARSKit.Workspace\LARS-top-10-items fold [2].txt
+[DEBUG] 2017-11-29 10:20:27,458 -- LARS fold [2]: Pre1: 0,055556, Pre3: 0,037037, Pre5: 0,022222, Pre10: 0,011111, Rec1: 0,055556, Rec3: 0,111111, Rec5: 0,111111, Rec10: 0,111111, F11: 0,055556, F13: 0,061728, F15: 0,037037, F110: 0,020202, AUC: 0,555083, MAP1: 0,055556, MAP3: 0,074074, MAP5: 0,074074, MAP10: 0,074074, NDCG: 0,083333, MRR: 0,074074	Time: 00:00, 00:00
+[DEBUG] 2017-11-29 10:20:27,462 -- Evaluation for fold 1 has written to file: C:\Projeto\pibic-master\datasets\yelp\CARSKit.Workspace\lars -cf -user 2 -lat 23.5533 -long 50.3453 -k 10_evalfolds.csv
+[DEBUG] 2017-11-29 10:20:27,463 -- Evaluation for fold 2 has written to file: C:\Projeto\pibic-master\datasets\yelp\CARSKit.Workspace\lars -cf -user 2 -lat 23.5533 -long 50.3453 -k 10_evalfolds.csv
+[INFO ] 2017-11-29 10:20:27,465 -- Final Results by lars, Pre1: 0,027778, Pre3: 0,026455, Pre5: 0,025397, Pre10: 0,012698, Rec1: 0,027778, Rec3: 0,079365, Rec5: 0,126984, Rec10: 0,126984, F11: 0,027778, F13: 0,044092, F15: 0,042328, F110: 0,023088, AUC: 0,562348, MAP1: 0,027778, MAP3: 0,048942, MAP5: 0,058466, MAP10: 0,058466, NDCG: 0,075110, MRR: 0,058466, carskit.alg.cars.transformation.modeling.LARS@b4a017, Time: '00:00','00:00'
 
-[DEBUG] 2017-11-02 06:48:26,719 -- Have been collected to file: results_all_2016.txt
+[DEBUG] 2017-11-29 10:20:27,493 -- Have been collected to file: results_all_2016.txt
