@@ -69,8 +69,6 @@ public class LARS extends Recommender {
 
         R = sortByValue(R);
         System.out.println(R.toString());
-        System.out.println(maxDistanceGlobal);
-        System.out.println(minDistanceGlobal);
 
 
 
@@ -111,7 +109,6 @@ public class LARS extends Recommender {
     public double predict(int u, int j, int c) throws Exception {
 
         double recScore, p, travelPenalty;
-
         p = recUsed.predict(u, j);
         travelPenalty = normalizeDistance(itemTravelPenalty.get(j), 5, 1);
         recScore = p - travelPenalty;
