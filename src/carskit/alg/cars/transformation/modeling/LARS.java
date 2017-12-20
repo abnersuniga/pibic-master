@@ -9,10 +9,7 @@ import happy.coding.io.LineConfiger;
 import librec.data.MatrixEntry;
 
 import java.security.Key;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.*;
 
 
 public class LARS extends Recommender {
@@ -22,9 +19,10 @@ public class LARS extends Recommender {
     private double userLat;
     private double userLong;
     private int k;
-    private Map<Integer,Double> itemLowestTravelPenalty;
+    private Map<Integer,Double> itemTravelPenalty;
     private double maxDistanceGlobal, minDistanceGlobal;
-    private LinkedHashMap<Integer,Double> R;
+    private Map<String, Double> R;
+    private ItemKNN recUsed;
 
     public LARS(SparseMatrix trainMatrix, SparseMatrix testMatrix, int fold) throws Exception {
         super(trainMatrix, testMatrix, fold);
@@ -36,25 +34,45 @@ public class LARS extends Recommender {
         this.userLong 	    = LARS.algoOptions.getDouble("-long");
         this.k              = LARS.algoOptions.getInt("-k");
 
-        this.itemLowestTravelPenalty = new HashMap<Integer,Double>();
-        this.R = new LinkedHashMap<Integer,Double>();
+        this.itemTravelPenalty = new HashMap<Integer,Double>();
+        this.R = new LinkedHashMap<String,Double>();
 
-        ItemKNN recUsed = new ItemKNN(trainMatrix, testMatrix, fold);
+        recUsed = new ItemKNN(trainMatrix, testMatrix, fold);
         // Model Building
         recUsed.execute();
 
         buildTravelPenaltyModel(trainMatrix, this.userLat, this.userLong);
 
+        /*
         for(int i = 0; i < this.k; i++){
-            double recScore;
+            double recScore, p, travelPenalty;
 
             Map.Entry<Integer, Double> minEntry = nextLowestTravelPenalty();
-            recScore = recUsed.predict(Integer.parseInt(this.userID), minEntry.getKey()) - normalizeDistance(minEntry.getValue());
+            p = recUsed.predict(Integer.parseInt(this.userID), minEntry.getKey());
+            travelPenalty = normalizeDistance(minEntry.getValue(), 5, 1);
 
+            recScore = p - travelPenalty;
             R.put(minEntry.getKey(),recScore);
         }
+        */
 
+        for(MatrixEntry me : trainMatrix){
+
+            double recScore, p, travelPenalty;
+            int itemID = rateDao.getItemIdFromUI(me.row());
+            p = recUsed.predict(Integer.parseInt(this.userID), itemID);
+            travelPenalty = normalizeDistance(itemTravelPenalty.get(itemID), 5, 1);
+            recScore = p - travelPenalty;
+
+            R.put(String.valueOf(itemID),recScore);
+        }
+
+        R = sortByValue(R);
         System.out.println(R.toString());
+        System.out.println(maxDistanceGlobal);
+        System.out.println(minDistanceGlobal);
+
+
 
         //writeMatrix(trainMatrix);
         //writeMatrix(testMatrix);
@@ -89,16 +107,54 @@ public class LARS extends Recommender {
 
     }
 
+    @Override
+    public double predict(int u, int j, int c) throws Exception {
+
+        double recScore, p, travelPenalty;
+
+        p = recUsed.predict(u, j);
+        travelPenalty = normalizeDistance(itemTravelPenalty.get(j), 5, 1);
+        recScore = p - travelPenalty;
+        System.out.println(recScore + "=" + p + "-" + travelPenalty);
+        return recScore;
+    }
+
+    public static Map<String, Double> sortByValue(Map<String, Double> unsorted_map){
+
+        Map<String, Double> sorted_map = new LinkedHashMap<String, Double>();
+
+        try{
+            // 1. Convert Map to List of Map
+            List<Map.Entry<String, Double>> list = new LinkedList<Map.Entry<String, Double>>(unsorted_map.entrySet());
+
+            // 2. Sort list with Collections.sort(), provide a custom Comparator
+            Collections.sort(list, new Comparator<Map.Entry<String, Double>>() {
+                public int compare(Map.Entry<String, Double> o1,
+                                   Map.Entry<String, Double> o2) {
+                    return (o2.getValue()).compareTo(o1.getValue());
+                }
+            });
+
+            // 3. Loop the sorted list and put it into a new insertion order Map LinkedHashMap
+            for (Map.Entry<String, Double> entry : list) {
+                sorted_map.put(entry.getKey(), entry.getValue());
+            }
+
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+
+        return sorted_map;
+
+    }
+
+    private Double normalizeDistance(Double distance, int max, int min){
+        double value = (distance - minDistanceGlobal) / (maxDistanceGlobal - minDistanceGlobal);
+        return value * (max - min) + min;
+    }
+
     /*
-    public List<Integer> runSpatialItems(int u, double userLat, double userLong,int k){
-
-    }
-    */
-
-    private Double normalizeDistance(Double distance){
-        return (distance - minDistanceGlobal) / maxDistanceGlobal - minDistanceGlobal;
-    }
-
     private Map.Entry<Integer,Double> nextLowestTravelPenalty(){
         Map.Entry<Integer, Double> minEntry = null;
         for (Map.Entry<Integer, Double> entry : this.itemLowestTravelPenalty.entrySet()){
@@ -110,7 +166,8 @@ public class LARS extends Recommender {
         itemLowestTravelPenalty.remove(minEntry.getKey());
         return minEntry;
     }
-
+    */
+    /*
     private void buildTravelPenaltyModel(SparseMatrix matrix, double userLat, double userLong){
 
         int i = 0;
@@ -168,6 +225,38 @@ public class LARS extends Recommender {
         //System.out.println("maxDistanceGlobal: " + maxDistanceGlobal + "\t" + "minDistanceGlobal: " + minDistanceGlobal);
         //System.out.println(this.itemLowestTravelPenalty.toString());
 
+    }
+    */
+    private void buildTravelPenaltyModel(SparseMatrix matrix, double userLat, double userLong){
+        int i = 0;
+        int itemID, maxID;
+        double itemLat = 0;
+        double itemLong = 0;
+        double euclideanDistance;
+        Boolean first = true;
+
+        for(MatrixEntry me : matrix){
+
+            itemID = rateDao.getItemIdFromUI(me.row());
+            String[] contexts = rateDao.getContextId(me.column()).split(",");
+
+            itemLat = Double.parseDouble(rateDao.getContextConditionId(Integer.parseInt(contexts[0])).split(":")[1]);
+            itemLong = Double.parseDouble(rateDao.getContextConditionId(Integer.parseInt(contexts[1])).split(":")[1]);
+
+            euclideanDistance = Math.sqrt((Math.pow(userLat - itemLat, 2.0) + Math.pow(userLong - itemLong,2.0)));
+
+            if(first || euclideanDistance < minDistanceGlobal){
+                minDistanceGlobal = euclideanDistance;
+            }
+
+            if(first || euclideanDistance > maxDistanceGlobal){
+                maxDistanceGlobal = euclideanDistance;
+            }
+            first = false;
+
+
+            itemTravelPenalty.put(itemID, euclideanDistance);
+        }
     }
 
 
