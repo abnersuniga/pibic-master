@@ -79,6 +79,10 @@ public class LARS extends Recommender {
             }
         }
 
+        writeMatrix(trainMatrix);
+        writeMatrix(testMatrix);
+
+
     }
 
     @Override
@@ -176,5 +180,33 @@ public class LARS extends Recommender {
 
         return recsys;
     }
+
+    private void writeMatrix(SparseMatrix matrix){
+        System.out.println("\n\n WRITEMATRIX \n\n");
+        try{
+
+            for(MatrixEntry me : matrix){
+                StringBuilder sb  = new StringBuilder();
+                String[] contexts = rateDao.getContextId(me.column()).split(",");
+
+                sb.append("User CARSKit: " + rateDao.getUserIdFromUI(me.row()));
+                sb.append("\t");
+                sb.append("User: " + rateDao.getUserId(rateDao.getUserIdFromUI(me.row())));
+                sb.append("\t");
+                sb.append("Item: " + rateDao.getItemId(rateDao.getItemIdFromUI(me.row())));
+                sb.append("\t");
+                sb.append("Contexts: ");
+                for(int i = 0; i < contexts.length; i++){
+                    sb.append(rateDao.getContextConditionId(Integer.parseInt(contexts[i])));
+                    sb.append("\t");
+                }
+                System.out.println(sb.toString() + "\n");
+
+            }
+        }catch(Exception e){
+
+        }
+    }
+
 }
 
