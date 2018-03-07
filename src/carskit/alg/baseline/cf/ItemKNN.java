@@ -92,8 +92,8 @@ public class ItemKNN extends Recommender {
     }
 
     
-    //@Override
-    public double predict(int u, int j) throws Exception{
+    @Override
+    protected double predict(int u, int j) throws Exception{
 
         // find a number of similar items
         Map<Integer, Double> nns = new HashMap<>();
