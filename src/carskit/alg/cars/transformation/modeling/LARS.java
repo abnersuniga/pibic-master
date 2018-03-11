@@ -14,9 +14,8 @@ import java.util.*;
 
 public class LARS extends Recommender {
 
-    private double genericLat, genericLong;
     private String rec;
-    private double maxDistanceGlobal, minDistanceGlobal;
+    private Map<Integer,Double[]> itemDistances;
     private Recommender recUsed;
 
     public LARS(SparseMatrix trainMatrix, SparseMatrix testMatrix, int fold) throws Exception {
@@ -24,30 +23,33 @@ public class LARS extends Recommender {
 
         LARS.algoOptions	= new LineConfiger(cf.getString("recommender"));
         this.rec = LARS.algoOptions.getString("-cf");
-        this.genericLat       = LARS.algoOptions.getDouble("-lat");
-        this.genericLong      = LARS.algoOptions.getDouble("-long");
 
         recUsed = getRecommender(trainMatrix, testMatrix, fold);
         recUsed.execute();
 
+        itemDistances = getItemDistances(trainMatrix);
     }
 
     @Override
     public double predict(int u, int j, int c) throws Exception {
 
-        double recScore, p, travelPenalty, latContext, longContext, euclideanDistance;
+        double recScore, p, travelPenalty, contextLat, contextLong, itemLat, itemLong, euclideanDistance;
         String[] contexts = rateDao.getContextId(c).split(",");
 
-        latContext = Double.parseDouble(rateDao.getContextConditionId(Integer.parseInt(contexts[0])).split(":")[1]);
-        longContext = Double.parseDouble(rateDao.getContextConditionId(Integer.parseInt(contexts[1])).split(":")[1]);
+        contextLat = Double.parseDouble(rateDao.getContextConditionId(Integer.parseInt(contexts[0])).split(":")[1]);
+        contextLong = Double.parseDouble(rateDao.getContextConditionId(Integer.parseInt(contexts[1])).split(":")[1]);
 
-        euclideanDistance = Math.sqrt((Math.pow(genericLat - latContext, 2.0) + Math.pow(genericLong - longContext,2.0)));
+        itemLat = itemDistances.get(j)[0];
+        itemLong = itemDistances.get(j)[1];
 
-        travelPenalty = euclideanDistance;
+        euclideanDistance = Math.sqrt((Math.pow(itemLat - contextLat, 2.0) + Math.pow(itemLong - contextLong,2.0)));
+
+        travelPenalty = normalizeDistance(euclideanDistance, recUsed.maxRate, recUsed.minRate);
 
         p = recUsed.recommend(u, j, c);
         recScore = p - travelPenalty;
 
+        System.out.println(recScore);
 
         if (recScore > maxRate)
             recScore = maxRate;
@@ -58,6 +60,10 @@ public class LARS extends Recommender {
         return recScore;
     }
 
+    private Double normalizeDistance(Double distance, Double max, Double min){
+        double value = (distance - 0) / (125.42205755523861 - 0);
+        return value * (max - min) + min;
+    }
 
     private Recommender getRecommender(SparseMatrix train, SparseMatrix test, int fold){
 
@@ -76,6 +82,30 @@ public class LARS extends Recommender {
         System.out.println("Collaborative filtering algorithm " + this.rec.toUpperCase() + "\n");
 
         return recsys;
+    }
+
+    private Map<Integer,Double[]> getItemDistances(SparseMatrix matrix) {
+        int itemId;
+        double itemLat, itemLong;
+        Double[] loc;
+        Map<Integer,Double[]> itemDistances = new HashMap<Integer,Double[]>();
+
+        for(MatrixEntry me : matrix){
+
+            itemId = rateDao.getItemIdFromUI(me.row());
+            String[] contexts = rateDao.getContextId(me.column()).split(",");
+
+            itemLat = Double.parseDouble(rateDao.getContextConditionId(Integer.parseInt(contexts[0])).split(":")[1]);
+            itemLong = Double.parseDouble(rateDao.getContextConditionId(Integer.parseInt(contexts[1])).split(":")[1]);
+
+            loc = new Double[2];
+            loc[0] = itemLat;
+            loc[1] = itemLong;
+
+            itemDistances.put(itemId, loc);
+        }
+
+        return itemDistances;
     }
 
 }
