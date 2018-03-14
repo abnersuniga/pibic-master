@@ -17,6 +17,7 @@ public class LARS extends Recommender {
     private String rec;
     private Map<Integer,Double[]> itemDistances;
     private Recommender recUsed;
+    private Double maxUserToItemDistance, minUserToItemDistance;
 
     public LARS(SparseMatrix trainMatrix, SparseMatrix testMatrix, int fold) throws Exception {
         super(trainMatrix, testMatrix, fold);
@@ -28,6 +29,10 @@ public class LARS extends Recommender {
         recUsed.execute();
 
         itemDistances = getItemDistances(trainMatrix);
+        getMinAndMaxDistances(trainMatrix);
+
+        System.out.println("min: " + this.minUserToItemDistance);
+        System.out.println("max: " + this.maxUserToItemDistance);
     }
 
     @Override
@@ -49,7 +54,8 @@ public class LARS extends Recommender {
         p = recUsed.recommend(u, j, c);
         recScore = p - travelPenalty;
 
-        System.out.println(recScore);
+        //System.out.println(recScore);
+
 
         if (recScore > maxRate)
             recScore = maxRate;
@@ -57,11 +63,12 @@ public class LARS extends Recommender {
         if (recScore < minRate)
             recScore = minRate;
 
+
         return recScore;
     }
 
     private Double normalizeDistance(Double distance, Double max, Double min){
-        double value = (distance - 0) / (125.42205755523861 - 0);
+        double value = (distance - minUserToItemDistance) / (maxUserToItemDistance - minUserToItemDistance);
         return value * (max - min) + min;
     }
 
@@ -106,6 +113,43 @@ public class LARS extends Recommender {
         }
 
         return itemDistances;
+    }
+
+    private void getMinAndMaxDistances(SparseMatrix matrix) {
+        int itemIdI,itemIdJ;
+        double itemLatI, itemLongI, itemLatJ, itemLongJ, euclideanDistance;
+        boolean first = true;
+        String[] contexts;
+
+        for(MatrixEntry mei : matrix){
+
+            itemIdI = rateDao.getItemIdFromUI(mei.row());
+            contexts = rateDao.getContextId(mei.column()).split(",");
+
+            itemLatI = Double.parseDouble(rateDao.getContextConditionId(Integer.parseInt(contexts[0])).split(":")[1]);
+            itemLongI = Double.parseDouble(rateDao.getContextConditionId(Integer.parseInt(contexts[1])).split(":")[1]);
+
+            for(MatrixEntry mej : matrix){
+
+                itemIdJ = rateDao.getItemIdFromUI(mej.row());
+                contexts = rateDao.getContextId(mej.column()).split(",");
+
+                itemLatJ = Double.parseDouble(rateDao.getContextConditionId(Integer.parseInt(contexts[0])).split(":")[1]);
+                itemLongJ = Double.parseDouble(rateDao.getContextConditionId(Integer.parseInt(contexts[1])).split(":")[1]);
+
+                euclideanDistance = Math.sqrt((Math.pow(itemLatI - itemLatJ, 2.0) + Math.pow(itemLongI - itemLongJ,2.0)));
+
+                if(first || euclideanDistance > maxUserToItemDistance){
+                    maxUserToItemDistance = euclideanDistance;
+                }
+
+                if(first || euclideanDistance < minUserToItemDistance){
+                    minUserToItemDistance = euclideanDistance;
+                }
+
+                first = false;
+            }
+        }
     }
 
 }
