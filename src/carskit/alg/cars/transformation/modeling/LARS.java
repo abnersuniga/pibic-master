@@ -15,7 +15,7 @@ import java.util.*;
 public class LARS extends Recommender {
 
     private String rec;
-    private Map<Integer,Double[]> itemDistances;
+    private Map<Integer,Double[]> itemsLocalization;
     private Recommender recUsed;
     private Double maxUserToItemDistance, minUserToItemDistance;
 
@@ -28,7 +28,7 @@ public class LARS extends Recommender {
         recUsed = getRecommender(trainMatrix, testMatrix, fold);
         recUsed.execute();
 
-        itemDistances = getItemDistances(trainMatrix);
+        itemsLocalization = getItemsLocalization(trainMatrix);
         getMinAndMaxDistances(trainMatrix);
 
 
@@ -45,8 +45,8 @@ public class LARS extends Recommender {
         contextLat = Double.parseDouble(rateDao.getContextConditionId(Integer.parseInt(contexts[0])).split(":")[1]);
         contextLong = Double.parseDouble(rateDao.getContextConditionId(Integer.parseInt(contexts[1])).split(":")[1]);
 
-        itemLat = itemDistances.get(j)[0];
-        itemLong = itemDistances.get(j)[1];
+        itemLat = itemsLocalization.get(j)[0];
+        itemLong = itemsLocalization.get(j)[1];
 
         euclideanDistance = Math.sqrt((Math.pow(itemLat - contextLat, 2.0) + Math.pow(itemLong - contextLong,2.0)));
 
@@ -92,7 +92,7 @@ public class LARS extends Recommender {
         return recsys;
     }
 
-    private Map<Integer,Double[]> getItemDistances(SparseMatrix matrix) {
+    private Map<Integer,Double[]> getItemsLocalization(SparseMatrix matrix) {
         int itemId;
         double itemLat, itemLong;
         Double[] loc;
