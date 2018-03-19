@@ -1,12 +1,12 @@
-[INFO ] 2018-03-13 21:25:50,924 -- WorkingPath: C:\Projeto\pibic-master\datasets\yelp\CARSKit.Workspace\
-[INFO ] 2018-03-13 21:25:50,941 -- Your original rating data path: C:\Projeto\pibic-master\datasets\yelp\yelp_dataset_reduzido.csv
-[INFO ] 2018-03-13 21:25:50,941 -- Current working path: C:\Projeto\pibic-master\datasets\yelp\CARSKit.Workspace\
-[WARN ] 2018-03-13 21:25:50,945 -- You rating data is in Compact format. CARSKit is working on transformation on the data format...
-[INFO ] 2018-03-13 21:25:51,101 -- Data transformaton completed (from Compact to Binary format). See new rating file: C:\Projeto\pibic-master\datasets\yelp\CARSKit.Workspace\ratings_binary.txt
-[INFO ] 2018-03-13 21:25:51,124 -- Dataset: ...ARSKit.Workspace\ratings_binary.txt
-[INFO ] 2018-03-13 21:25:51,127 -- DataPath: C:\Projeto\pibic-master\datasets\yelp\CARSKit.Workspace\ratings_binary.txt
-[INFO ] 2018-03-13 21:25:51,403 -- Rating data set has been successfully loaded.
-[INFO ] 2018-03-13 21:25:51,415 -- 
+[INFO ] 2018-03-19 09:05:00,280 -- WorkingPath: C:\Projeto\pibic-master\datasets\yelp\CARSKit.Workspace\
+[INFO ] 2018-03-19 09:05:00,294 -- Your original rating data path: C:\Projeto\pibic-master\datasets\yelp\yelp_dataset_reduzido.csv
+[INFO ] 2018-03-19 09:05:00,294 -- Current working path: C:\Projeto\pibic-master\datasets\yelp\CARSKit.Workspace\
+[WARN ] 2018-03-19 09:05:00,297 -- You rating data is in Compact format. CARSKit is working on transformation on the data format...
+[INFO ] 2018-03-19 09:05:00,446 -- Data transformaton completed (from Compact to Binary format). See new rating file: C:\Projeto\pibic-master\datasets\yelp\CARSKit.Workspace\ratings_binary.txt
+[INFO ] 2018-03-19 09:05:00,472 -- Dataset: ...ARSKit.Workspace\ratings_binary.txt
+[INFO ] 2018-03-19 09:05:00,476 -- DataPath: C:\Projeto\pibic-master\datasets\yelp\CARSKit.Workspace\ratings_binary.txt
+[INFO ] 2018-03-19 09:05:00,699 -- Rating data set has been successfully loaded.
+[INFO ] 2018-03-19 09:05:00,708 -- 
 /************************************************************************************
  *
  * Dataset: C:\Projeto\pibic-master\datasets\yelp\CARSKit.Workspace\ratings_binary.txt
@@ -26,37 +26,37 @@
  * Median of all rating values: 4,000000
  *
  ************************************************************************************/
-[INFO ] 2018-03-13 21:25:51,418 -- With Setup: cv -k 2 -p on --rand-seed 1 --test-view all
-[DEBUG] 2018-03-13 21:25:51,428 -- Fold [1]: training amount: 249, test amount: 250
-[DEBUG] 2018-03-13 21:25:51,443 -- Build item similarity matrix ...
-[DEBUG] 2018-03-13 21:25:51,484 -- ItemKNN fold [1] evaluate test data ... 
-[DEBUG] 2018-03-13 21:25:51,489 -- ItemKNN fold [1] has candidate items: 237
-[DEBUG] 2018-03-13 21:25:51,842 -- ItemKNN fold [1] evaluates progress: 200 / 239
-[DEBUG] 2018-03-13 21:25:52,116 -- ItemKNN fold [1] has writeen item recommendations to C:\Projeto\pibic-master\datasets\yelp\CARSKit.Workspace\ItemKNN-top-10-items fold [1].txt
-[DEBUG] 2018-03-13 21:25:52,126 -- ItemKNN fold [1]: Pre1: 0,000000, Pre3: 0,015873, Pre5: 0,028571, Pre10: 0,014286, Rec1: 0,000000, Rec3: 0,047619, Rec5: 0,142857, Rec10: 0,142857, F11: 0,000000, F13: 0,026455, F15: 0,047619, F110: 0,025974, AUC: 0,569613, MAP1: 0,000000, MAP3: 0,023810, MAP5: 0,042857, MAP10: 0,042857, NDCG: 0,066887, MRR: 0,042857	Time: 00:00, 00:00
-[DEBUG] 2018-03-13 21:25:52,344 -- Fold [2]: training amount: 250, test amount: 249
-[DEBUG] 2018-03-13 21:25:52,348 -- LARS fold [1] evaluate test data ... 
-[DEBUG] 2018-03-13 21:25:52,352 -- LARS fold [1] has candidate items: 237
-[DEBUG] 2018-03-13 21:25:52,354 -- Build item similarity matrix ...
-[DEBUG] 2018-03-13 21:25:52,445 -- ItemKNN fold [2] evaluate test data ... 
-[DEBUG] 2018-03-13 21:25:52,451 -- ItemKNN fold [2] has candidate items: 236
-[DEBUG] 2018-03-13 21:25:52,483 -- ItemKNN fold [2] evaluates progress: 100 / 241
-[DEBUG] 2018-03-13 21:25:52,669 -- ItemKNN fold [2] evaluates progress: 300 / 241
-[DEBUG] 2018-03-13 21:25:52,715 -- LARS fold [1] evaluates progress: 200 / 239
-[DEBUG] 2018-03-13 21:25:52,917 -- ItemKNN fold [2] evaluates progress: 400 / 241
-[DEBUG] 2018-03-13 21:25:52,950 -- ItemKNN fold [2] has writeen item recommendations to C:\Projeto\pibic-master\datasets\yelp\CARSKit.Workspace\ItemKNN-top-10-items fold [2].txt
-[DEBUG] 2018-03-13 21:25:52,953 -- ItemKNN fold [2]: Pre1: 0,055556, Pre3: 0,037037, Pre5: 0,022222, Pre10: 0,011111, Rec1: 0,055556, Rec3: 0,111111, Rec5: 0,111111, Rec10: 0,111111, F11: 0,055556, F13: 0,061728, F15: 0,037037, F110: 0,020202, AUC: 0,555083, MAP1: 0,055556, MAP3: 0,074074, MAP5: 0,074074, MAP10: 0,074074, NDCG: 0,083333, MRR: 0,074074	Time: 00:00, 00:00
-[DEBUG] 2018-03-13 21:25:52,993 -- LARS fold [1] has writeen item recommendations to C:\Projeto\pibic-master\datasets\yelp\CARSKit.Workspace\LARS-top-10-items fold [1].txt
-[DEBUG] 2018-03-13 21:25:52,997 -- LARS fold [1]: Pre1: 1,000000, Pre3: 0,333333, Pre5: 0,200000, Pre10: 0,100000, Rec1: 1,000000, Rec3: 1,000000, Rec5: 1,000000, Rec10: 1,000000, F11: 1,000000, F13: 0,555556, F15: 0,333333, F110: 0,181818, AUC: 1,000000, MAP1: 1,000000, MAP3: 1,000000, MAP5: 1,000000, MAP10: 1,000000, NDCG: 1,000000, MRR: 1,000000	Time: 00:00, 00:00
-[DEBUG] 2018-03-13 21:25:53,122 -- LARS fold [2] evaluate test data ... 
-[DEBUG] 2018-03-13 21:25:53,126 -- LARS fold [2] has candidate items: 236
-[DEBUG] 2018-03-13 21:25:53,150 -- LARS fold [2] evaluates progress: 100 / 241
-[DEBUG] 2018-03-13 21:25:53,293 -- LARS fold [2] evaluates progress: 300 / 241
-[DEBUG] 2018-03-13 21:25:53,467 -- LARS fold [2] evaluates progress: 400 / 241
-[DEBUG] 2018-03-13 21:25:53,489 -- LARS fold [2] has writeen item recommendations to C:\Projeto\pibic-master\datasets\yelp\CARSKit.Workspace\LARS-top-10-items fold [2].txt
-[DEBUG] 2018-03-13 21:25:53,491 -- LARS fold [2]: Pre1: 1,000000, Pre3: 0,333333, Pre5: 0,200000, Pre10: 0,100000, Rec1: 1,000000, Rec3: 1,000000, Rec5: 1,000000, Rec10: 1,000000, F11: 1,000000, F13: 0,555556, F15: 0,333333, F110: 0,181818, AUC: 1,000000, MAP1: 1,000000, MAP3: 1,000000, MAP5: 1,000000, MAP10: 1,000000, NDCG: 1,000000, MRR: 1,000000	Time: 00:00, 00:00
-[DEBUG] 2018-03-13 21:25:53,493 -- Evaluation for fold 1 has written to file: C:\Projeto\pibic-master\datasets\yelp\CARSKit.Workspace\lars -cf itemknn_evalfolds.csv
-[DEBUG] 2018-03-13 21:25:53,496 -- Evaluation for fold 2 has written to file: C:\Projeto\pibic-master\datasets\yelp\CARSKit.Workspace\lars -cf itemknn_evalfolds.csv
-[INFO ] 2018-03-13 21:25:53,497 -- Final Results by lars, Pre1: 1,000000, Pre3: 0,333333, Pre5: 0,200000, Pre10: 0,100000, Rec1: 1,000000, Rec3: 1,000000, Rec5: 1,000000, Rec10: 1,000000, F11: 1,000000, F13: 0,555556, F15: 0,333333, F110: 0,181818, AUC: 1,000000, MAP1: 1,000000, MAP3: 1,000000, MAP5: 1,000000, MAP10: 1,000000, NDCG: 1,000000, MRR: 1,000000, carskit.alg.cars.transformation.modeling.LARS@b4a017, Time: '00:00','00:00'
+[INFO ] 2018-03-19 09:05:00,711 -- With Setup: cv -k 2 -p on --rand-seed 1 --test-view all
+[DEBUG] 2018-03-19 09:05:00,720 -- Fold [1]: training amount: 249, test amount: 250
+[DEBUG] 2018-03-19 09:05:00,734 -- Build item similarity matrix ...
+[DEBUG] 2018-03-19 09:05:00,764 -- ItemKNN fold [1] evaluate test data ... 
+[DEBUG] 2018-03-19 09:05:00,769 -- ItemKNN fold [1] has candidate items: 237
+[DEBUG] 2018-03-19 09:05:01,046 -- ItemKNN fold [1] evaluates progress: 200 / 239
+[DEBUG] 2018-03-19 09:05:01,250 -- ItemKNN fold [1] has writeen item recommendations to C:\Projeto\pibic-master\datasets\yelp\CARSKit.Workspace\ItemKNN-top-10-items fold [1].txt
+[DEBUG] 2018-03-19 09:05:01,257 -- ItemKNN fold [1]: Pre1: 0,000000, Pre3: 0,015873, Pre5: 0,028571, Pre10: 0,014286, Rec1: 0,000000, Rec3: 0,047619, Rec5: 0,142857, Rec10: 0,142857, F11: 0,000000, F13: 0,026455, F15: 0,047619, F110: 0,025974, AUC: 0,569613, MAP1: 0,000000, MAP3: 0,023810, MAP5: 0,042857, MAP10: 0,042857, NDCG: 0,066887, MRR: 0,042857	Time: 00:00, 00:00
+[DEBUG] 2018-03-19 09:05:01,428 -- Fold [2]: training amount: 250, test amount: 249
+[DEBUG] 2018-03-19 09:05:01,431 -- LARS fold [1] evaluate test data ... 
+[DEBUG] 2018-03-19 09:05:01,432 -- Build item similarity matrix ...
+[DEBUG] 2018-03-19 09:05:01,436 -- LARS fold [1] has candidate items: 237
+[DEBUG] 2018-03-19 09:05:01,448 -- ItemKNN fold [2] evaluate test data ... 
+[DEBUG] 2018-03-19 09:05:01,458 -- ItemKNN fold [2] has candidate items: 236
+[DEBUG] 2018-03-19 09:05:01,526 -- ItemKNN fold [2] evaluates progress: 100 / 241
+[DEBUG] 2018-03-19 09:05:01,685 -- ItemKNN fold [2] evaluates progress: 300 / 241
+[DEBUG] 2018-03-19 09:05:01,756 -- LARS fold [1] evaluates progress: 200 / 239
+[DEBUG] 2018-03-19 09:05:01,882 -- ItemKNN fold [2] evaluates progress: 400 / 241
+[DEBUG] 2018-03-19 09:05:01,911 -- ItemKNN fold [2] has writeen item recommendations to C:\Projeto\pibic-master\datasets\yelp\CARSKit.Workspace\ItemKNN-top-10-items fold [2].txt
+[DEBUG] 2018-03-19 09:05:01,912 -- ItemKNN fold [2]: Pre1: 0,055556, Pre3: 0,037037, Pre5: 0,022222, Pre10: 0,011111, Rec1: 0,055556, Rec3: 0,111111, Rec5: 0,111111, Rec10: 0,111111, F11: 0,055556, F13: 0,061728, F15: 0,037037, F110: 0,020202, AUC: 0,555083, MAP1: 0,055556, MAP3: 0,074074, MAP5: 0,074074, MAP10: 0,074074, NDCG: 0,083333, MRR: 0,074074	Time: 00:00, 00:00
+[DEBUG] 2018-03-19 09:05:02,001 -- LARS fold [1] has writeen item recommendations to C:\Projeto\pibic-master\datasets\yelp\CARSKit.Workspace\LARS-top-10-items fold [1].txt
+[DEBUG] 2018-03-19 09:05:02,003 -- LARS fold [1]: Pre1: 1,000000, Pre3: 0,333333, Pre5: 0,200000, Pre10: 0,100000, Rec1: 1,000000, Rec3: 1,000000, Rec5: 1,000000, Rec10: 1,000000, F11: 1,000000, F13: 0,555556, F15: 0,333333, F110: 0,181818, AUC: 1,000000, MAP1: 1,000000, MAP3: 1,000000, MAP5: 1,000000, MAP10: 1,000000, NDCG: 1,000000, MRR: 1,000000	Time: 00:00, 00:00
+[DEBUG] 2018-03-19 09:05:02,080 -- LARS fold [2] evaluate test data ... 
+[DEBUG] 2018-03-19 09:05:02,083 -- LARS fold [2] has candidate items: 236
+[DEBUG] 2018-03-19 09:05:02,106 -- LARS fold [2] evaluates progress: 100 / 241
+[DEBUG] 2018-03-19 09:05:02,237 -- LARS fold [2] evaluates progress: 300 / 241
+[DEBUG] 2018-03-19 09:05:02,389 -- LARS fold [2] evaluates progress: 400 / 241
+[DEBUG] 2018-03-19 09:05:02,408 -- LARS fold [2] has writeen item recommendations to C:\Projeto\pibic-master\datasets\yelp\CARSKit.Workspace\LARS-top-10-items fold [2].txt
+[DEBUG] 2018-03-19 09:05:02,410 -- LARS fold [2]: Pre1: 1,000000, Pre3: 0,333333, Pre5: 0,200000, Pre10: 0,100000, Rec1: 1,000000, Rec3: 1,000000, Rec5: 1,000000, Rec10: 1,000000, F11: 1,000000, F13: 0,555556, F15: 0,333333, F110: 0,181818, AUC: 1,000000, MAP1: 1,000000, MAP3: 1,000000, MAP5: 1,000000, MAP10: 1,000000, NDCG: 1,000000, MRR: 1,000000	Time: 00:00, 00:00
+[DEBUG] 2018-03-19 09:05:02,413 -- Evaluation for fold 1 has written to file: C:\Projeto\pibic-master\datasets\yelp\CARSKit.Workspace\lars -cf itemknn_evalfolds.csv
+[DEBUG] 2018-03-19 09:05:02,415 -- Evaluation for fold 2 has written to file: C:\Projeto\pibic-master\datasets\yelp\CARSKit.Workspace\lars -cf itemknn_evalfolds.csv
+[INFO ] 2018-03-19 09:05:02,416 -- Final Results by lars, Pre1: 1,000000, Pre3: 0,333333, Pre5: 0,200000, Pre10: 0,100000, Rec1: 1,000000, Rec3: 1,000000, Rec5: 1,000000, Rec10: 1,000000, F11: 1,000000, F13: 0,555556, F15: 0,333333, F110: 0,181818, AUC: 1,000000, MAP1: 1,000000, MAP3: 1,000000, MAP5: 1,000000, MAP10: 1,000000, NDCG: 1,000000, MRR: 1,000000, carskit.alg.cars.transformation.modeling.LARS@b4a017, Time: '00:00','00:00'
 
-[DEBUG] 2018-03-13 21:25:53,498 -- Have been collected to file: results_all_2016.txt
+[DEBUG] 2018-03-19 09:05:02,418 -- Have been collected to file: results_all_2016.txt

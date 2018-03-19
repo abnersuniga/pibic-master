@@ -31,6 +31,7 @@ public class LARS extends Recommender {
         itemDistances = getItemDistances(trainMatrix);
         getMinAndMaxDistances(trainMatrix);
 
+
         System.out.println("min: " + this.minUserToItemDistance);
         System.out.println("max: " + this.maxUserToItemDistance);
     }
@@ -54,15 +55,15 @@ public class LARS extends Recommender {
         p = recUsed.recommend(u, j, c);
         recScore = p - travelPenalty;
 
-        //System.out.println(recScore);
-
-
+        /*
         if (recScore > maxRate)
             recScore = maxRate;
 
         if (recScore < minRate)
             recScore = minRate;
+        */
 
+        //System.out.println("p = " + p + "\tp - travelP = " + recScore);
 
         return recScore;
     }
